@@ -1,0 +1,17 @@
+{
+  "name": "@zapply/job-board-processing",
+  "version": "1.0.0",
+  "description": "Zapply job pipeline processing — enrichment, alerts, discord, metrics",
+  "scripts": {
+    "test": "node lib/__tests__/enrich-jobs.test.js && node lib/__tests__/inf-metrics.test.js && node lib/__tests__/pipeline-checks.test.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.800.0",
+    "he": "^1.2.0",
+    "discord.js": "^14.16.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
