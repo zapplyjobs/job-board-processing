@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "enrichment_contract",
+  "title": "ZJP Enrichment Output Contract",
+  "description": "Schema contract between enrich-jobs.js (producer) and backend pipeline.ts (consumer). Both systems MUST agree on field names and types. Changes require updating both sides.",
+  "version": 1,
+  "producer": {
+    "repo": "zapplyjobs/job-board-processing",
+    "file": "lib/enrich-jobs.js",
+    "output_key": "data/enriched_jobs.json"
+  },
+  "consumer": {
+    "repo": "zapplyjobs/zapply-backend",
+    "file": "cloudflare/job-processor-cron-worker/src/types.ts",
+    "interface": "EnrichedRecord"
+  },
+  "fields": {
+    "id": {
+      "type": "string",
+      "required": true,
+      "description": "Unique job identifier (source-fingerprint format)",
+      "consumer_reads": true,
+      "consumer_field": "sourceId (lookup key for enrichedMap)"
+    },
+    "source": {
+      "type": "string",
+      "required": true,
+      "description": "ATS source (greenhouse, lever, ashby, etc.)",
+      "consumer_reads": false
+    },
+    "enricher_version": {
+      "type": "number",
+      "required": true,
+      "description": "Enricher version that produced this record",
+      "consumer_reads": false
+    },
+    "required_skills": {
+      "type": "array[string]",
+      "required": true,
+      "description": "Taxonomy-matched required skills",
+      "consumer_reads": true,
+      "consumer_field": "skills (merged with nice_to_have_skills)"
+    },
+    "nice_to_have_skills": {
+      "type": "array[string]",
+      "required": true,
+      "description": "Taxonomy-matched nice-to-have skills",
+      "consumer_reads": true,
+      "consumer_field": "skills (merged with required_skills)"
+    },
+    "sponsors_visa": {
+      "type": "boolean|null",
+      "required": true,
+      "description": "LCA + description analysis — does company sponsor visas",
+      "consumer_reads": true,
+      "consumer_field": "details.enriched.sponsorsVisa"
+    },
+    "possible_sponsor": {
+      "type": "boolean|null",
+      "required": true,
+      "required_since_version": 37,
+      "description": "Weaker visa signal — company may sponsor. Absent in records before v37 — backend treats as null.",
+      "consumer_reads": true,
+      "consumer_field": "details.enriched.possibleSponsor"
+    },
+    "visa_question_present": {
+      "type": "boolean|null",
+      "required": true,
+      "description": "Does application form ask about visa status",
+      "consumer_reads": true,
+      "consumer_field": "details.enriched.visaQuestionPresent"
+    },
+    "is_remote": {
+      "type": "boolean",
+      "required": true,
+      "description": "Remote work flag",
+      "consumer_reads": false
+    },
+    "experience_level": {
+      "type": "string|null",
+      "required": true,
+      "description": "Experience level from tags (entry_level, mid_level, etc.)",
+      "consumer_reads": false
+    },
+    "experience_level_from_desc": {
+      "type": "string|null",
+      "required": true,
+      "required_since_version": 36,
+      "description": "Experience level extracted from job description text. Absent before v36 — backend treats as null.",
+      "consumer_reads": true,
+      "consumer_field": "details.experienceLevel"
+    },
+    "has_description": {
+      "type": "boolean",
+      "required": true,
+      "required_since_version": 36,
+      "description": "Whether a job description was available for enrichment. Absent before v36.",
+      "consumer_reads": true,
+      "consumer_field": "used for filtering (jobs without description dropped in pipeline step 5)"
+    },
+    "min_degree": {
+      "type": "string|null",
+      "required": true,
+      "required_since_version": 36,
+      "description": "Minimum degree requirement (bachelors, masters, phd, etc.). Absent before v36 — backend treats as null.",
+      "consumer_reads": true,
+      "consumer_field": "details.minDegree"
+    },
+    "min_degree_source": {
+      "type": "string|null",
+      "required": false,
+      "description": "How min_degree was determined (extracted, inferred, etc.)",
+      "consumer_reads": false
+    },
+    "is_simple_apply": {
+      "type": "boolean",
+      "required": true,
+      "description": "Whether application is one-click/simple",
+      "consumer_reads": false
+    },
+    "question_count": {
+      "type": "number",
+      "required": true,
+      "description": "Number of questions in application form",
+      "consumer_reads": false
+    },
+    "enriched_at": {
+      "type": "string",
+      "required": true,
+      "description": "ISO timestamp of enrichment",
+      "consumer_reads": false
+    },
+    "title": {
+      "type": "string|null",
+      "required": false,
+      "description": "Job title (copied from source for reference)",
+      "consumer_reads": false
+    },
+    "company_name": {
+      "type": "string|null",
+      "required": false,
+      "description": "Company name (copied from source for reference)",
+      "consumer_reads": false
+    },
+    "job_city": {
+      "type": "string|null",
+      "required": false,
+      "description": "Job city (copied from source for reference)",
+      "consumer_reads": false
+    },
+    "job_state": {
+      "type": "string|null",
+      "required": false,
+      "description": "Job state (copied from source for reference)",
+      "consumer_reads": false
+    },
+    "url": {
+      "type": "string|null",
+      "required": false,
+      "description": "Job URL (copied from source for reference)",
+      "consumer_reads": false
+    },
+    "posted_at": {
+      "type": "string|null",
+      "required": false,
+      "description": "Posted date (copied from source for reference)",
+      "consumer_reads": false
+    }
+  },
+  "change_log": [
+    {
+      "version": 1,
+      "date": "2026-05-18",
+      "description": "Initial contract — documents current state of enriched_jobs.json output (23 fields, 9 consumed by backend)"
+    }
+  ],
+  "change_rules": {
+    "adding_fields": "Safe — consumer ignores unknown fields. Add to contract and update enricher_version.",
+    "removing_fields": "Breaking — MUST check consumer_reads first. If consumer_reads=true, coordinate with backend before removing.",
+    "renaming_fields": "Breaking — MUST update both producer and consumer simultaneously. Use contract test to verify.",
+    "type_changes": "Breaking — MUST update both sides. Null promotions (string -> string|null) are safe. Restrictive changes (string -> enum) need consumer update."
+  }
+}
