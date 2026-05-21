@@ -165,13 +165,16 @@
   "Jane Street": "Jane Street Group",
   "Glean": "Glean Technologies",
   "General Dynamics Mission Systems": "General Dynamics Information Technology",
-  "Amentum": "Amentum Technology",
-  "Eurofins": "Eurofins Lancaster Laboratories",
+  "Amentum": "Amentum Technology Inc",
+  "Eurofins": "Eurofins Lancaster Laboratories LLC",
   "JPMorgan Chase": "JPMorgan Chase & Co",
   "Fiserv": "Fiserv Solutions",
-  "WSP": "WSP USA",
+  "WSP": "WSP USA Inc",
   "Magna": "Magna Electronics",
   "BorgWarner": "BorgWarner PDS (USA)",
   "ABB": "ABB Inc",
-  "GDIT": "General Dynamics Information Technology"
+  "GDIT": "General Dynamics Information Technology",
+  "Huntsman": "Huntsman International LLC",
+  "Esri": "Environmental Systems Research Institute (Esri)",
+  "Eversource Energy": "Eversource Energy Service Company"
 }
