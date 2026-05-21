@@ -39,7 +39,13 @@ jobs:
             lib/companies.json \
             lib/metrics-logic.js \
             lib/enrich/skills-taxonomy.json \
-            lib/enrich/lca-aliases.json
+            lib/enrich/lca-aliases.json \
+            lib/enrich/taxonomy.js \
+            lib/enrich/text-processing.js \
+            lib/enrich/visa.js \
+            lib/enrich/field-extraction.js \
+            lib/enrich/description-fetcher.js \
+            lib/enrich/stats.js
           do
             if [ ! -f "$FILE" ]; then
               echo "::error file=$FILE::Critical file missing: $FILE"
