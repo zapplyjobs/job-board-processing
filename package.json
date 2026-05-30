@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Zapply job pipeline processing — enrichment, alerts, discord, metrics",
   "scripts": {
-    "test": "node lib/__tests__/enrichment-contract.test.js && node lib/__tests__/enrich-jobs.test.js && node lib/__tests__/inf-metrics.test.js && node lib/__tests__/pipeline-checks.test.js"
+    "test": "node lib/__tests__/enrichment-contract.test.js && node lib/__tests__/enrich-jobs.test.js && node lib/__tests__/stats.test.js && node lib/__tests__/inf-metrics.test.js && node lib/__tests__/pipeline-checks.test.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.800.0",
