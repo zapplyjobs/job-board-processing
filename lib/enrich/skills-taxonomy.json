@@ -634,6 +634,28 @@
     "hmi",
     "dcs"
   ],
+  "building_automation": [
+    "building automation systems",
+    "hvac",
+    "bas",
+    "ahu",
+    "ahus",
+    "vav",
+    "chiller",
+    "chillers",
+    "boiler",
+    "boilers",
+    "smart building analytics"
+  ],
+  "industrial_systems": [
+    "conveyor system",
+    "conveyor systems",
+    "conveyor installation"
+  ],
+  "defense_electronics": [
+    "electronic warfare",
+    "BLQ-10"
+  ],
   "eda_semiconductor": [
     "synopsys",
     "mentor graphics",
