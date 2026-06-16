@@ -632,7 +632,8 @@
     "plc",
     "scada",
     "hmi",
-    "dcs"
+    "dcs",
+    "tolerance analyses"
   ],
   "building_automation": [
     "building automation systems",
@@ -737,6 +738,8 @@
     "ukg",
     "peoplesoft",
     "dynamics 365",
+    "power automate",
+    "uipath",
     "netsuite",
     "hubspot",
     "zendesk",
@@ -790,6 +793,7 @@
     "reliability engineering",
     "failure analysis",
     "power systems",
+    "switchgear",
     "thermal analysis",
     "instrumentation",
     "control systems",
