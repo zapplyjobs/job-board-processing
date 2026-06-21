@@ -698,6 +698,8 @@
     "do-229",
     "mil-std",
     "iec 62304",
+    "iec 61010",
+    "iec 62368",
     "cfr"
   ],
   "analytics_bi": [
@@ -813,6 +815,8 @@
     "foundation design",
     "site design",
     "construction management",
-    "field engineering"
+    "field engineering",
+    "3-phase",
+    "power distribution"
   ]
 }
