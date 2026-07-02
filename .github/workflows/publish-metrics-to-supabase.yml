@@ -1,0 +1,45 @@
+name: publish-metrics-to-supabase
+
+# Auto-publishes the 8 pipeline metric blobs from jobs-data-2026 into the Supabase
+# pipeline_metrics table, which the local zjp-dashboard reads. Keeps the dashboard's
+# data fresh without a manual step. (Direction: projects/zjp/docs/dash/DASH_DIRECTION.md)
+#
+# The producer (jobs-aggregator-private Fetch All Jobs) runs every 15 min and commits
+# fresh metrics to jobs-data-2026. This runs every 10 min, checks out that data, and
+# upserts it to Supabase. Data age on the dashboard ≈ producer cycle (~15 min) + run
+# (~7 min) + this poll gap — limited by the producer's own cadence.
+#
+# REQUIRED SECRET (add in job-board-processing Settings → Secrets → Actions):
+#   SUPABASE_SERVICE_ROLE_KEY  — the Supabase service-role key (server-only; bypasses RLS).
+# (SUPABASE_URL is the project URL, hardcoded below — not secret.)
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'   # every 10 min
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout job-board-processing (the publish script)
+        uses: actions/checkout@v4
+
+      - name: Checkout jobs-data-2026 (the metric data — public repo)
+        uses: actions/checkout@v4
+        with:
+          repository: zapplyjobs/jobs-data-2026
+          path: jobs-data-2026
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Publish metric blobs to Supabase (pipeline_metrics)
+        run: node lib/publish-metrics-to-supabase.js --data-dir jobs-data-2026/.github/data
+        env:
+          SUPABASE_URL: https://xxmhgagpbxjflajoaahy.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
