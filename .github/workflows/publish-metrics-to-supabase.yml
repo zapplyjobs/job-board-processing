@@ -1,17 +1,17 @@
 name: publish-metrics-to-supabase
 
-# Auto-publishes the 8 pipeline metric blobs from jobs-data-2026 into the Supabase
-# pipeline_metrics table, which the local zjp-dashboard reads. Keeps the dashboard's
-# data fresh without a manual step. (Direction: projects/zjp/docs/dash/DASH_DIRECTION.md)
+# Auto-publishes the 8 pipeline metric blobs to the Supabase pipeline_metrics table (which the
+# local zjp-dashboard reads), keeping the dashboard fresh without a manual step.
 #
-# The producer (jobs-aggregator-private Fetch All Jobs) runs every 15 min and commits
-# fresh metrics to jobs-data-2026. This runs every 10 min, checks out that data, and
-# upserts it to Supabase. Data age on the dashboard ≈ producer cycle (~15 min) + run
-# (~7 min) + this poll gap — limited by the producer's own cadence.
+# SECURITY: this workflow does NOT hold the sensitive SUPABASE_SERVICE_ROLE_KEY. It reads the
+# metric data via git checkout (NOT raw-GitHub), then POSTs the blobs to a Supabase Edge Function
+# (supabase/functions/publish-metrics) that holds the service key in Supabase's own secret store.
+# GitHub Actions only needs PUBLISH_SECRET (a lightweight shared secret).
+# Direction: projects/zjp/docs/dash/DASH_DIRECTION.md
 #
-# REQUIRED SECRET (add in job-board-processing Settings → Secrets → Actions):
-#   SUPABASE_SERVICE_ROLE_KEY  — the Supabase service-role key (server-only; bypasses RLS).
-# (SUPABASE_URL is the project URL, hardcoded below — not secret.)
+# REQUIRED (add in job-board-processing Settings → Secrets → Actions):
+#   PUBLISH_SECRET  — the same random string set as the function's PUBLISH_SECRET in Supabase.
+# AND the Edge Function must be deployed + its secrets set (see supabase/functions/publish-metrics/index.ts).
 
 on:
   schedule:
@@ -38,8 +38,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Publish metric blobs to Supabase (pipeline_metrics)
-        run: node lib/publish-metrics-to-supabase.js --data-dir jobs-data-2026/.github/data
+      - name: POST metric blobs to the Supabase Edge Function
+        run: node lib/publish-metrics-to-edge.js --data-dir jobs-data-2026/.github/data
         env:
-          SUPABASE_URL: https://xxmhgagpbxjflajoaahy.supabase.co
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          EDGE_FUNCTION_URL: https://xxmhgagpbxjflajoaahy.supabase.co/functions/v1/publish-metrics
+          PUBLISH_SECRET: ${{ secrets.PUBLISH_SECRET }}
