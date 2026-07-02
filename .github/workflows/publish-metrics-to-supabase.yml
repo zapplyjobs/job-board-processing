@@ -11,7 +11,8 @@ name: publish-metrics-to-supabase
 #
 # REQUIRED (add in job-board-processing Settings → Secrets → Actions):
 #   PUBLISH_SECRET  — the same random string set as the function's PUBLISH_SECRET in Supabase.
-# AND the Edge Function must be deployed + its secrets set (see supabase/functions/publish-metrics/index.ts).
+# AND the Edge Function (named "publish-metrics-function" in Supabase) must be deployed + its
+# secrets set (SUPABASE_SERVICE_ROLE_KEY + PUBLISH_SECRET).
 
 on:
   schedule:
@@ -41,5 +42,5 @@ jobs:
       - name: POST metric blobs to the Supabase Edge Function
         run: node lib/publish-metrics-to-edge.js --data-dir jobs-data-2026/.github/data
         env:
-          EDGE_FUNCTION_URL: https://xxmhgagpbxjflajoaahy.supabase.co/functions/v1/publish-metrics
+          EDGE_FUNCTION_URL: https://xxmhgagpbxjflajoaahy.supabase.co/functions/v1/publish-metrics-function
           PUBLISH_SECRET: ${{ secrets.PUBLISH_SECRET }}
