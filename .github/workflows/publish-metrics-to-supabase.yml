@@ -38,6 +38,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Fetch metric blobs from R2 (INF-BRIDGE-1 — blobs untracked from git by R2-cutover)
+        # The 16 metric blobs were untracked from jobs-data-2026 git (they now live in R2).
+        # Download them from R2 into the data dir so publish-metrics-to-edge reads fresh data.
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        run: node scripts/r2-fetch-metrics.js jobs-data-2026/.github/data
 
       - name: POST metric blobs to the Supabase Edge Function
         run: node lib/publish-metrics-to-edge.js --data-dir jobs-data-2026/.github/data
