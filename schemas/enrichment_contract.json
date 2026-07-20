@@ -1,183 +1,136 @@
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "enrichment_contract",
-  "title": "ZJP Enrichment Output Contract",
-  "description": "Schema contract between enrich-jobs.js (producer) and backend pipeline.ts (consumer). Both systems MUST agree on field names and types. Changes require updating both sides.",
-  "version": 1,
-  "producer": {
-    "repo": "zapplyjobs/job-board-processing",
-    "file": "lib/enrich-jobs.js",
-    "output_key": "data/enriched_jobs.json"
-  },
-  "consumer": {
-    "repo": "zapplyjobs/zapply-backend",
-    "file": "cloudflare/job-processor-cron-worker/src/types.ts",
-    "interface": "EnrichedRecord"
-  },
-  "fields": {
-    "id": {
-      "type": "string",
-      "required": true,
-      "description": "Unique job identifier (source-fingerprint format)",
-      "consumer_reads": true,
-      "consumer_field": "sourceId (lookup key for enrichedMap)"
-    },
-    "source": {
-      "type": "string",
-      "required": true,
-      "description": "ATS source (greenhouse, lever, ashby, etc.)",
-      "consumer_reads": false
-    },
-    "enricher_version": {
-      "type": "number",
-      "required": true,
-      "description": "Enricher version that produced this record",
-      "consumer_reads": false
-    },
-    "required_skills": {
-      "type": "array[string]",
-      "required": true,
-      "description": "Taxonomy-matched required skills",
-      "consumer_reads": true,
-      "consumer_field": "skills (merged with nice_to_have_skills)"
-    },
-    "nice_to_have_skills": {
-      "type": "array[string]",
-      "required": true,
-      "description": "Taxonomy-matched nice-to-have skills",
-      "consumer_reads": true,
-      "consumer_field": "skills (merged with required_skills)"
-    },
-    "sponsors_visa": {
-      "type": "boolean|null",
-      "required": true,
-      "description": "LCA + description analysis — does company sponsor visas",
-      "consumer_reads": true,
-      "consumer_field": "details.enriched.sponsorsVisa"
-    },
-    "possible_sponsor": {
-      "type": "boolean|null",
-      "required": true,
-      "required_since_version": 37,
-      "description": "Weaker visa signal — company may sponsor. Absent in records before v37 — backend treats as null.",
-      "consumer_reads": true,
-      "consumer_field": "details.enriched.possibleSponsor"
-    },
-    "visa_question_present": {
-      "type": "boolean|null",
-      "required": true,
-      "description": "Does application form ask about visa status",
-      "consumer_reads": true,
-      "consumer_field": "details.enriched.visaQuestionPresent"
-    },
-    "is_remote": {
-      "type": "boolean",
-      "required": true,
-      "description": "Remote work flag",
-      "consumer_reads": false
-    },
-    "experience_level": {
-      "type": "string|null",
-      "required": true,
-      "description": "Experience level from tags (entry_level, mid_level, etc.)",
-      "consumer_reads": false
-    },
-    "experience_level_from_desc": {
-      "type": "string|null",
-      "required": true,
-      "required_since_version": 36,
-      "description": "Experience level extracted from job description text. Absent before v36 — backend treats as null.",
-      "consumer_reads": true,
-      "consumer_field": "details.experienceLevel"
-    },
-    "has_description": {
-      "type": "boolean",
-      "required": true,
-      "required_since_version": 36,
-      "description": "Whether a job description was available for enrichment. Absent before v36.",
-      "consumer_reads": true,
-      "consumer_field": "used for filtering (jobs without description dropped in pipeline step 5)"
-    },
-    "min_degree": {
-      "type": "string|null",
-      "required": true,
-      "required_since_version": 36,
-      "description": "Minimum degree requirement (bachelors, masters, phd, etc.). Absent before v36 — backend treats as null.",
-      "consumer_reads": true,
-      "consumer_field": "details.minDegree"
-    },
-    "min_degree_source": {
-      "type": "string|null",
-      "required": false,
-      "description": "How min_degree was determined (extracted, inferred, etc.)",
-      "consumer_reads": false
-    },
-    "is_simple_apply": {
-      "type": "boolean",
-      "required": true,
-      "description": "Whether application is one-click/simple",
-      "consumer_reads": false
-    },
-    "question_count": {
-      "type": "number",
-      "required": true,
-      "description": "Number of questions in application form",
-      "consumer_reads": false
-    },
-    "enriched_at": {
-      "type": "string",
-      "required": true,
-      "description": "ISO timestamp of enrichment",
-      "consumer_reads": false
-    },
-    "title": {
-      "type": "string|null",
-      "required": false,
-      "description": "Job title (copied from source for reference)",
-      "consumer_reads": false
-    },
-    "company_name": {
-      "type": "string|null",
-      "required": false,
-      "description": "Company name (copied from source for reference)",
-      "consumer_reads": false
-    },
-    "job_city": {
-      "type": "string|null",
-      "required": false,
-      "description": "Job city (copied from source for reference)",
-      "consumer_reads": false
-    },
-    "job_state": {
-      "type": "string|null",
-      "required": false,
-      "description": "Job state (copied from source for reference)",
-      "consumer_reads": false
-    },
-    "url": {
-      "type": "string|null",
-      "required": false,
-      "description": "Job URL (copied from source for reference)",
-      "consumer_reads": false
-    },
-    "posted_at": {
-      "type": "string|null",
-      "required": false,
-      "description": "Posted date (copied from source for reference)",
-      "consumer_reads": false
-    }
-  },
-  "change_log": [
-    {
-      "version": 1,
-      "date": "2026-05-18",
-      "description": "Initial contract — documents current state of enriched_jobs.json output (23 fields, 9 consumed by backend)"
-    }
-  ],
-  "change_rules": {
-    "adding_fields": "Safe — consumer ignores unknown fields. Add to contract and update enricher_version.",
-    "removing_fields": "Breaking — MUST check consumer_reads first. If consumer_reads=true, coordinate with backend before removing.",
-    "renaming_fields": "Breaking — MUST update both producer and consumer simultaneously. Use contract test to verify.",
-    "type_changes": "Breaking — MUST update both sides. Null promotions (string -> string|null) are safe. Restrictive changes (string -> enum) need consumer update."
-  }
-}
+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
+eACep+oC2OYsc/ocwVxTQw==

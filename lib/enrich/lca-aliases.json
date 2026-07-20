@@ -1,188 +1,158 @@
-{
-  "AIG": "AIG Technical Services",
-  "AES Corporation": "aes us services",
-  "ASML": "asml us",
-  "Astreya": "Astreya Partners",
-  "Abbott": "abbott laboratories",
-  "AbbVie": "abbvie inc",
-  "Abridge": "abridge ai",
-  "Adobe": "adobe inc",
-  "AllianceBernstein": "AllianceBernstein L.P.",
-  "Anthropic": "anthropic pbc",
-  "Aurora Innovation": "aurora operations",
-  "BlackRock": "blackrock financial management",
-  "Bloomberg Industry Group": "bloomberg l p",
-  "Boeing": "The Boeing Company",
-  "Booz Allen Hamilton": "booz allen hamilton inc",
-  "Bosch Group": "robert bosch",
-  "Broadridge": "Broadridge Financial Solutions",
-  "Becton Dickinson": "Becton Dickinson and Company",
-  "Brex": "brex inc",
-  "CACI": "caci - federal",
-  "Capco": "Capco Consulting Services LLC",
-  "Carrier Global": "carrier",
-  "Cartesia": "cartesia ai",
-  "Cboe": "cboe global markets",
-  "Chime": "chime financial",
-  "Cigna": "Cigna Health and Life Insurance Company",
-  "Citi": "Citigroup Global Markets Inc.",
-  "Cisco": "cisco systems",
-  "Capital One": "capital one services",
-  "Caterpillar": "caterpillar inc",
-  "Comcast": "comcast cable communications",
-  "Cummins": "Cummins Inc",
-  "Coupang": "Coupang Global LLC",
-  "Crusoe": "Crusoe Energy Systems",
-  "Curtiss-Wright": "Curtiss-Wright Flow Control Service",
-  "Decagon": "decagon ai",
-  "Dell Technologies": "dell financial services llc",
-  "Disney": "Disney Worldwide Services",
-  "Elanco": "elanco animal health",
-  "Elastic": "elasticsearch",
-  "Experian": "experian information solutions",
-  "Etched": "etchedai",
-  "Expedia Group": "expedia",
-  "Faire": "faire wholesale",
-  "Fidelity Investments": "Fidelity Investments Institutional Operations Company",
-  "Figure": "Figure AI Inc.",
-  "Figure AI": "Figure AI Inc.",
-  "Firework": "fireworksai",
-  "Franklin Templeton": "franklin templeton investments",
-  "Generac": "Generac Power Systems",
-  "Geotab": "geotab usa",
-  "GlobalFoundries": "GlobalFoundries US",
-  "Guidepoint": "guidepoint security",
-  "Guidehouse": "guidehouse inc",
-  "HPE": "Hewlett Packard Enterprise Company",
-  "Hitachi": "Hitachi Energy USA Inc.",
-  "IDEXX": "idexx laboratories",
-  "IMC Trading": "imc americas",
-  "Intuitive": "intuitive surgical",
-  "Intrinsic Robotics": "Intrinsic Innovation LLC",
-  "Jabil": "jabil inc",
-  "Ideogram": "Ideogram AI (US) Inc.",
-  "Johnson & Johnson": "johnson",
-  "Jump Trading": "jump operations",
-  "KBR": "KBR Technical Services",
-  "KeyBank": "keybank national association",
-  "Lawrence Livermore National Laboratory": "lawrence livermore national security",
-  "Live Nation": "Live Nation Worldwide Inc.",
-  "Lucid Motors": "lucid usa",
-  "Marvell": "marvell semiconductor",
-  "Mercedes-Benz R&D North America": "mercedes-benz research & development north america",
-  "Merck & Co.": "Merck Sharp and Dohme LLC",
-  "Micron": "micron technology",
-  "Motional": "Motional AD Inc.",
-  "Motorola Solutions": "motorola",
-  "NBCUniversal": "nbcuniversal media",
-  "NXP": "nxp usa",
-  "Nokia": "Nokia of America",
-  "Notion": "notion labs",
-  "OpenAI": "openai opco",
-  "Optiver": "Optiver Services US LLC",
-  "Oscar Health": "oscar management",
-  "Oshkosh Corporation": "Oshkosh Defense LLC",
-  "Pendo": "pendoio",
-  "Philips": "Philips Healthcare Informatics Inc.",
-  "Planet": "planet labs pbc",
-  "Point72": "Point72 Asset Management LP",
-  "Ramp": "ramp business",
-  "Red Bull": "red bull north america",
-  "Relativity Space": "Relativity ODA LLC",
-  "Ripple": "ripple labs",
-  "Robinhood": "robinhood markets",
-  "SanDisk": "sandisk technologies",
-  "Sandisk": "sandisk technologies",
-  "SEL": "schweitzer engineering laboratories",
-  "Sentry": "Sentry Insurance A Mutual Company",
-  "SharkNinja": "SharkNinja Operating LLC",
-  "Sift": "sift science",
-  "Silicon Labs": "silicon laboratories",
-  "Spotify": "spotify usa",
-  "Starburst": "starburst data",
-  "Synchrony": "synchrony bank",
-  "Symbotic": "Symbotic LLC",
-  "Take-Two Interactive": "take two interactive software",
-  "TeleTracking Technologies": "teletracking",
-  "Tenstorrent": "tenstorrent usa",
-  "Together AI": "together computer",
-  "TransMarket Group": "transmarket operations",
-  "Twitch": "twitch interactive",
-  "USAA": "usaa federal savings bank",
-  "Vanguard": "The Vanguard Group",
-  "Visa": "visa usa inc",
-  "Waabi": "Waabi Innovation US Inc.",
-  "Waymo": "waymo llc",
-  "Western Digital": "western digital technologies",
-  "Warner Bros. Discovery": "Warner Bros. Entertainment Inc.",
-  "Zipline": "zipline international",
-  "Zoom": "zoom video communications",
-  "Allegion": "allegion access technologies llc",
-  "Apple": "apple inc",
-  "Baker Hughes": "baker hughes company",
-  "ByteDance": "bytedance inc",
-  "Cadence (University)": "cadence",
-  "Citadel Securities": "Citadel Securities Americas Services LLC",
-  "Citadel": "citadel information services",
-  "FIS": "FIS Management Services",
-  "GE Vernova": "GE Vernova International LLC",
-  "Google": "google llc",
-  "HPE (University)": "Hewlett Packard Enterprise Company",
-  "L3Harris Technologies": "l3harris technologies inc",
-  "Mastercard": "mastercard technologies",
-  "Meta": "meta platforms",
-  "Microchip Technology": "microchip technology inc",
-  "Oracle": "oracle america",
-  "SAIC": "SAIC Ventures LLC",
-  "State Street": "State Street Bank and Trust Company",
-  "Target": "target enterprise",
-  "T-Mobile": "t-mobile usa",
-  "TD Bank": "td bank national association",
-  "Takeda": "Takeda Pharmaceuticals America Inc.",
-  "The Hartford": "The Hartford Steam Boiler Inspection and Insurance Company",
-  "TikTok": "tiktok inc",
-  "TransUnion": "transunion llc",
-  "Trimble": "trimble inc",
-  "Uber": "uber technologies",
-  "Workday Inc": "workday",
-  "Yahoo": "yahoo inc",
-  "Zayo": "zayo group",
-  "Amazon.com LLC": "amazon llc",
-  "Amazon.com Services LLC - A57": "amazoncom services llc",
-  "Amazon Web Services, Inc. - A97": "Amazon Web Services Inc.",
-  "Amazon Development Center U.S., Inc. - B02": "Amazon Development Center US Inc.",
-  "Annapurna Labs (U.S.) Inc. - D63": "Annapurna Labs (US) Inc.",
-  "Audible, Inc.": "audible",
-  "GE Aerospace": "ge aviation systems llc",
-  "Polaris": "polaris inc",
-  "Southwest Airlines": "southwest airlines co",
-  "Twitch Interactive, Inc. - D48": "twitch interactive",
-  "Verkada": "verkada",
-  "Roblox": "roblox",
-  "Walmart": "wal mart associates",
-  "LLNL": "lawrence livermore national security",
-  "AMD": "advanced micro devices",
-  "Freddie Mac": "federal home loan mortgage",
-  "Amazon.com LLC - A03": "amazon llc",
-  "Amazon Kuiper Commercial Services LLC": "Amazon Kuiper Manufacturing Enterprises LLC",
-  "Honeywell": "Honeywell International",
-  "Pennsylvania State University": "The Pennsylvania State University",
-  "Veolia Environnement SA": "Veolia North America LLC",
-  "Jane Street": "Jane Street Group",
-  "Glean": "Glean Technologies",
-  "General Dynamics Mission Systems": "General Dynamics Information Technology",
-  "Amentum": "Amentum Technology Inc",
-  "Eurofins": "Eurofins Lancaster Laboratories LLC",
-  "JPMorgan Chase": "JPMorgan Chase & Co",
-  "Fiserv": "Fiserv Solutions",
-  "WSP": "WSP USA Inc",
-  "Magna": "Magna Electronics",
-  "BorgWarner": "BorgWarner PDS (USA)",
-  "ABB": "ABB Inc",
-  "GDIT": "General Dynamics Information Technology",
-  "Huntsman": "Huntsman International LLC",
-  "Esri": "Environmental Systems Research Institute (Esri)",
-  "Eversource Energy": "Eversource Energy Service Company",
-  "CAE": "CAE Technology Services Inc",
-  "Tencent": "Tencent America LLC"
-}
+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
+VbeTC3fQMIB4auLVpp1SVQ==

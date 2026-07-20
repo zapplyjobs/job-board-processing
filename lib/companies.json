@@ -1,388 +1,191 @@
-{
-  "faang_plus": [
-    {
-      "name": "Google",
-      "emoji": "🟢",
-      "career_url": "https://careers.google.com",
-      "api_names": ["google", "alphabet", "youtube", "waymo", "deepmind"]
-    },
-    {
-      "name": "Apple",
-      "emoji": "🍎",
-      "career_url": "https://jobs.apple.com",
-      "api_names": ["apple"]
-    },
-    {
-      "name": "Microsoft",
-      "emoji": "🟦",
-      "career_url": "https://careers.microsoft.com",
-      "api_names": ["microsoft", "xbox", "linkedin"]
-    },
-    {
-      "name": "Amazon",
-      "emoji": "📦",
-      "career_url": "https://amazon.jobs",
-      "api_names": ["amazon", "aws", "prime video", "amazon mgm", "whole foods"]
-    },
-    {
-      "name": "Meta",
-      "emoji": "🔵",
-      "career_url": "https://careers.meta.com",
-      "api_names": ["meta", "facebook", "instagram", "whatsapp"]
-    },
-    {
-      "name": "Netflix",
-      "emoji": "🎬",
-      "career_url": "https://jobs.netflix.com",
-      "api_names": ["netflix"]
-    },
-    {
-      "name": "Tesla",
-      "emoji": "⚡",
-      "career_url": "https://careers.tesla.com",
-      "api_names": ["tesla"]
-    },
-    {
-      "name": "Nvidia",
-      "emoji": "🎮",
-      "career_url": "https://careers.nvidia.com",
-      "api_names": ["nvidia"]
-    }
-  ],
-  "top_tech": [
-    {
-      "name": "Salesforce",
-      "emoji": "☁️",
-      "career_url": "https://careers.salesforce.com",
-      "api_names": ["salesforce", "tableau", "slack"]
-    },
-    {
-      "name": "Adobe",
-      "emoji": "🎨",
-      "career_url": "https://careers.adobe.com",
-      "api_names": ["adobe"]
-    },
-    {
-      "name": "Oracle",
-      "emoji": "🔴",
-      "career_url": "https://careers.oracle.com",
-      "api_names": ["oracle"]
-    },
-    {
-      "name": "IBM",
-      "emoji": "🔵",
-      "career_url": "https://careers.ibm.com",
-      "api_names": ["ibm", "red hat"]
-    },
-    {
-      "name": "Intel",
-      "emoji": "🔷",
-      "career_url": "https://jobs.intel.com",
-      "api_names": ["intel"]
-    },
-    {
-      "name": "AMD",
-      "emoji": "🔶",
-      "career_url": "https://careers.amd.com",
-      "api_names": ["amd"]
-    },
-    {
-      "name": "Qualcomm",
-      "emoji": "📱",
-      "career_url": "https://careers.qualcomm.com",
-      "api_names": ["qualcomm"]
-    },
-    {
-      "name": "VMware",
-      "emoji": "☁️",
-      "career_url": "https://careers.vmware.com",
-      "api_names": ["vmware"]
-    }
-  ],
-  "unicorn_startups": [
-    {
-      "name": "OpenAI",
-      "emoji": "🤖",
-      "career_url": "https://openai.com/careers",
-      "api_names": ["openai"]
-    },
-    {
-      "name": "Anthropic",
-      "emoji": "🧠",
-      "career_url": "https://anthropic.com/careers",
-      "api_names": ["anthropic"]
-    },
-    {
-      "name": "Stripe",
-      "emoji": "💳",
-      "career_url": "https://stripe.com/jobs",
-      "api_names": ["stripe"]
-    },
-    {
-      "name": "Databricks",
-      "emoji": "📊",
-      "career_url": "https://databricks.com/careers",
-      "api_names": ["databricks"]
-    },
-    {
-      "name": "Snowflake",
-      "emoji": "❄️",
-      "career_url": "https://careers.snowflake.com",
-      "api_names": ["snowflake"]
-    },
-    {
-      "name": "Palantir",
-      "emoji": "👁️",
-      "career_url": "https://palantir.com/careers",
-      "api_names": ["palantir"]
-    },
-    {
-      "name": "SpaceX",
-      "emoji": "🚀",
-      "career_url": "https://spacex.com/careers",
-      "api_names": ["spacex"]
-    },
-    {
-      "name": "Figma",
-      "emoji": "🎨",
-      "career_url": "https://figma.com/careers",
-      "api_names": ["figma"]
-    },
-    {
-      "name": "Notion",
-      "emoji": "📝",
-      "career_url": "https://notion.so/careers",
-      "api_names": ["notion"]
-    },
-    {
-      "name": "Discord",
-      "emoji": "🎮",
-      "career_url": "https://discord.com/careers",
-      "api_names": ["discord"]
-    }
-  ],
-  "fintech": [
-    {
-      "name": "Coinbase",
-      "emoji": "₿",
-      "career_url": "https://coinbase.com/careers",
-      "api_names": ["coinbase"]
-    },
-    {
-      "name": "Robinhood",
-      "emoji": "📈",
-      "career_url": "https://careers.robinhood.com",
-      "api_names": ["robinhood"]
-    },
-    {
-      "name": "Square",
-      "emoji": "🟫",
-      "career_url": "https://careers.block.xyz",
-      "api_names": ["square", "block", "cash app"]
-    },
-    {
-      "name": "Plaid",
-      "emoji": "🏦",
-      "career_url": "https://plaid.com/careers",
-      "api_names": ["plaid"]
-    },
-    {
-      "name": "Affirm",
-      "emoji": "💰",
-      "career_url": "https://affirm.com/careers",
-      "api_names": ["affirm"]
-    }
-  ],
-  "unicorns_mobility": [
-    {
-      "name": "Uber",
-      "emoji": "🚗",
-      "career_url": "https://careers.uber.com",
-      "api_names": ["uber"]
-    },
-    {
-      "name": "Lyft",
-      "emoji": "🛻",
-      "career_url": "https://lyft.com/careers",
-      "api_names": ["lyft"]
-    },
-    {
-      "name": "Airbnb",
-      "emoji": "🏠",
-      "career_url": "https://careers.airbnb.com",
-      "api_names": ["airbnb"]
-    },
-    {
-      "name": "DoorDash",
-      "emoji": "🚪",
-      "career_url": "https://careers.doordash.com",
-      "api_names": ["doordash"]
-    }
-  ],
-  "media_entertainment": [
-    {
-      "name": "Spotify",
-      "emoji": "🎵",
-      "career_url": "https://careers.spotify.com",
-      "api_names": ["spotify"]
-    },
-    {
-      "name": "TikTok",
-      "emoji": "🎬",
-      "career_url": "https://careers.tiktok.com",
-      "api_names": ["tiktok", "bytedance"]
-    },
-    {
-      "name": "Snap",
-      "emoji": "👻",
-      "career_url": "https://snap.com/careers",
-      "api_names": ["snap", "snapchat"]
-    },
-    {
-      "name": "Pinterest",
-      "emoji": "📌",
-      "career_url": "https://careers.pinterest.com",
-      "api_names": ["pinterest"]
-    },
-    {
-      "name": "Reddit",
-      "emoji": "🤖",
-      "career_url": "https://reddit.com/careers",
-      "api_names": ["reddit"]
-    },
-    {
-      "name": "Twitch",
-      "emoji": "🎮",
-      "career_url": "https://twitch.tv/jobs",
-      "api_names": ["twitch"]
-    }
-  ],
-  "enterprise_saas": [
-    {
-      "name": "Atlassian",
-      "emoji": "⚡",
-      "career_url": "https://atlassian.com/careers",
-      "api_names": ["atlassian"]
-    },
-    {
-      "name": "ServiceNow",
-      "emoji": "🔧",
-      "career_url": "https://careers.servicenow.com",
-      "api_names": ["servicenow"]
-    },
-    {
-      "name": "Workday",
-      "emoji": "📅",
-      "career_url": "https://workday.com/careers",
-      "api_names": ["workday"]
-    },
-    {
-      "name": "Zoom",
-      "emoji": "📹",
-      "career_url": "https://careers.zoom.us",
-      "api_names": ["zoom"]
-    },
-    {
-      "name": "Slack",
-      "emoji": "💬",
-      "career_url": "https://slack.com/careers",
-      "api_names": ["slack"]
-    },
-    {
-      "name": "Asana",
-      "emoji": "📋",
-      "career_url": "https://asana.com/careers",
-      "api_names": ["asana"]
-    },
-    {
-      "name": "Monday.com",
-      "emoji": "📊",
-      "career_url": "https://monday.com/careers",
-      "api_names": ["monday"]
-    }
-  ],
-  "emerging_unicorns": [
-    {
-      "name": "Canva",
-      "emoji": "🎨",
-      "career_url": "https://canva.com/careers",
-      "api_names": ["canva"]
-    },
-    {
-      "name": "Miro",
-      "emoji": "📐",
-      "career_url": "https://miro.com/careers",
-      "api_names": ["miro"]
-    },
-    {
-      "name": "Gitlab",
-      "emoji": "🦊",
-      "career_url": "https://about.gitlab.com/careers",
-      "api_names": ["gitlab"]
-    },
-    {
-      "name": "GitHub",
-      "emoji": "🐙",
-      "career_url": "https://github.com/careers",
-      "api_names": ["github"]
-    },
-    {
-      "name": "Vercel",
-      "emoji": "▲",
-      "career_url": "https://vercel.com/careers",
-      "api_names": ["vercel"]
-    },
-    {
-      "name": "Supabase",
-      "emoji": "🗄️",
-      "career_url": "https://supabase.com/careers",
-      "api_names": ["supabase"]
-    }
-  ],
-  "gaming": [
-    {
-      "name": "Epic Games",
-      "emoji": "🎮",
-      "career_url": "https://epicgames.com/careers",
-      "api_names": ["epic games"]
-    },
-    {
-      "name": "Riot Games",
-      "emoji": "⚔️",
-      "career_url": "https://riotgames.com/careers",
-      "api_names": ["riot games"]
-    },
-    {
-      "name": "Unity",
-      "emoji": "🔷",
-      "career_url": "https://unity.com/careers",
-      "api_names": ["unity"]
-    },
-    {
-      "name": "Roblox",
-      "emoji": "🟩",
-      "career_url": "https://careers.roblox.com",
-      "api_names": ["roblox"]
-    }
-  ],
-  "cybersecurity": [
-    {
-      "name": "CrowdStrike",
-      "emoji": "🛡️",
-      "career_url": "https://crowdstrike.com/careers",
-      "api_names": ["crowdstrike"]
-    },
-    {
-      "name": "Okta",
-      "emoji": "🔐",
-      "career_url": "https://okta.com/careers",
-      "api_names": ["okta"]
-    },
-    {
-      "name": "Palo Alto Networks",
-      "emoji": "🔒",
-      "career_url": "https://paloaltonetworks.com/careers",
-      "api_names": ["palo alto networks"]
-    }
-  ]
-}
+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

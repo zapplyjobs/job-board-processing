@@ -1,822 +1,287 @@
-{
-  "_meta": {
-    "version": "1.1.0",
-    "created": "2026-02-26",
-    "sources": [
-      "ESCO v1.2.1 core tech terms",
-      "GitHub Linguist",
-      "manual extension for modern frameworks"
-    ],
-    "total_skills": "see arrays below"
-  },
-  "programming_languages": [
-    "python",
-    "javascript",
-    "typescript",
-    "java",
-    "c++",
-    "c#",
-    "go",
-    "golang",
-    "rust",
-    "ruby",
-    "php",
-    "scala",
-    "r",
-    "perl",
-    "shell",
-    "powershell",
-    "haskell",
-    "elixir",
-    "erlang",
-    "clojure",
-    "groovy",
-    "dart",
-    "lua",
-    "fortran",
-    "cobol",
-    "assembly",
-    "julia",
-    "f#",
-    "ocaml",
-    "solidity",
-    "zig"
-  ],
-  "web_frontend": [
-    "react",
-    "react.js",
-    "reactjs",
-    "angular",
-    "angularjs",
-    "vue",
-    "vue.js",
-    "vuejs",
-    "svelte",
-    "next.js",
-    "nextjs",
-    "nuxt",
-    "nuxt.js",
-    "gatsby",
-    "remix",
-    "html",
-    "html5",
-    "css",
-    "css3",
-    "sass",
-    "scss",
-    "tailwind",
-    "tailwindcss",
-    "bootstrap",
-    "material ui",
-    "material-ui",
-    "chakra ui",
-    "ant design",
-    "styled-components",
-    "webpack",
-    "vite",
-    "rollup",
-    "parcel",
-    "babel",
-    "eslint",
-    "prettier",
-    "jquery",
-    "d3",
-    "d3.js",
-    "three.js",
-    "webgl",
-    "canvas api",
-    "storybook",
-    "sveltekit",
-    "webassembly",
-    "wasm"
-  ],
-  "web_backend": [
-    "node.js",
-    "nodejs",
-    "express",
-    "express.js",
-    "fastapi",
-    "flask",
-    "django",
-    "spring",
-    "spring boot",
-    "spring framework",
-    "rails",
-    "ruby on rails",
-    "laravel",
-    "symfony",
-    "asp.net",
-    ".net",
-    ".net core",
-    "gin",
-    "fiber",
-    "nestjs",
-    "nest.js",
-    "graphql",
-    "rest",
-    "restful",
-    "grpc",
-    "websocket",
-    "oauth",
-    "oauth2",
-    "jwt",
-    "openapi",
-    "swagger",
-    "sdk",
-    "trpc",
-    "websockets",
-    "web3"
-  ],
-  "databases": [
-    "sql",
-    "mysql",
-    "postgresql",
-    "postgres",
-    "sqlite",
-    "oracle",
-    "oracle db",
-    "microsoft sql server",
-    "mssql",
-    "sql server",
-    "mariadb",
-    "mongodb",
-    "mongoose",
-    "redis",
-    "memcached",
-    "cassandra",
-    "couchdb",
-    "dynamodb",
-    "firestore",
-    "firebase",
-    "supabase",
-    "planetscale",
-    "elasticsearch",
-    "opensearch",
-    "solr",
-    "neo4j",
-    "arangodb",
-    "snowflake",
-    "bigquery",
-    "redshift",
-    "databricks",
-    "clickhouse",
-    "influxdb",
-    "timescaledb",
-    "cockroachdb",
-    "prisma",
-    "drizzle"
-  ],
-  "cloud_platforms": [
-    "aws",
-    "amazon web services",
-    "ec2",
-    "s3",
-    "lambda",
-    "rds",
-    "eks",
-    "ecs",
-    "sqs",
-    "sns",
-    "cloudformation",
-    "cdk",
-    "cloudwatch",
-    "vpc",
-    "azure",
-    "microsoft azure",
-    "azure functions",
-    "azure devops",
-    "aks",
-    "gcp",
-    "google cloud",
-    "google cloud platform",
-    "gke",
-    "cloud run",
-    "heroku",
-    "vercel",
-    "netlify",
-    "digitalocean",
-    "linode",
-    "cloudflare",
-    "fastly",
-    "akamai",
-    "sagemaker",
-    "bedrock"
-  ],
-  "devops_infra": [
-    "docker",
-    "kubernetes",
-    "k8s",
-    "helm",
-    "terraform",
-    "ansible",
-    "puppet",
-    "chef",
-    "jenkins",
-    "github actions",
-    "gitlab ci",
-    "circleci",
-    "travis ci",
-    "teamcity",
-    "ci/cd",
-    "continuous integration",
-    "continuous deployment",
-    "continuous delivery",
-    "prometheus",
-    "grafana",
-    "datadog",
-    "splunk",
-    "elk stack",
-    "logstash",
-    "kibana",
-    "nginx",
-    "apache",
-    "haproxy",
-    "istio",
-    "envoy",
-    "vault",
-    "consul",
-    "nomad",
-    "pulumi",
-    "crossplane",
-    "argocd",
-    "flux"
-  ],
-  "data_ml": [
-    "machine learning",
-    "deep learning",
-    "neural network",
-    "nlp",
-    "natural language processing",
-    "computer vision",
-    "reinforcement learning",
-    "supervised learning",
-    "unsupervised learning",
-    "classification",
-    "regression",
-    "tensorflow",
-    "pytorch",
-    "keras",
-    "scikit-learn",
-    "sklearn",
-    "xgboost",
-    "lightgbm",
-    "pandas",
-    "numpy",
-    "scipy",
-    "matplotlib",
-    "seaborn",
-    "plotly",
-    "spark",
-    "apache spark",
-    "pyspark",
-    "hadoop",
-    "hive",
-    "kafka",
-    "apache kafka",
-    "airflow",
-    "apache airflow",
-    "dbt",
-    "dbt core",
-    "looker",
-    "tableau",
-    "power bi",
-    "jupyter",
-    "jupyter notebook",
-    "mlflow",
-    "kubeflow",
-    "ray",
-    "dask",
-    "hugging face",
-    "transformers",
-    "bert",
-    "gpt",
-    "llm",
-    "large language model",
-    "langchain",
-    "vector database",
-    "rag",
-    "retrieval augmented generation",
-    "openai",
-    "anthropic",
-    "llama",
-    "embeddings",
-    "embedding",
-    "fine-tuning",
-    "multimodal",
-    "generative ai",
-    "genai",
-    "agentic",
-    "agents",
-    "chatgpt",
-    "prompt engineering",
-    "mcp",
-    "model context protocol",
-    "llamaindex"
-  ],
-  "mobile": [
-    "ios",
-    "android",
-    "react native",
-    "flutter",
-    "swift",
-    "swiftui",
-    "objective-c",
-    "xcode",
-    "android studio",
-    "kotlin",
-    "jetpack compose",
-    "expo",
-    "ionic",
-    "capacitor",
-    "cordova",
-    "unity",
-    "unreal",
-    "godot"
-  ],
-  "security": [
-    "cybersecurity",
-    "cyber security",
-    "network security",
-    "information security",
-    "penetration testing",
-    "pen testing",
-    "vulnerability assessment",
-    "siem",
-    "soc",
-    "incident response",
-    "threat modeling",
-    "owasp",
-    "ssl",
-    "tls",
-    "encryption",
-    "pki",
-    "iam",
-    "zero trust",
-    "sast",
-    "dast",
-    "devsecops",
-    "soc 2",
-    "iso 27001",
-    "nist",
-    "gdpr",
-    "hipaa",
-    "firewalls",
-    "ids",
-    "ips",
-    "dlp",
-    "endpoint detection",
-    "edr",
-    "xdr"
-  ],
-  "testing": [
-    "unit testing",
-    "integration testing",
-    "end-to-end testing",
-    "e2e testing",
-    "test driven development",
-    "tdd",
-    "behavior driven development",
-    "bdd",
-    "jest",
-    "mocha",
-    "chai",
-    "jasmine",
-    "vitest",
-    "cypress",
-    "playwright",
-    "selenium",
-    "pytest",
-    "junit",
-    "testng",
-    "mockito",
-    "rspec",
-    "load testing",
-    "performance testing",
-    "jmeter",
-    "k6",
-    "locust"
-  ],
-  "version_control_collab": [
-    "git",
-    "github",
-    "gitlab",
-    "bitbucket",
-    "svn",
-    "mercurial",
-    "jira",
-    "confluence",
-    "notion",
-    "linear",
-    "trello",
-    "asana",
-    "slack",
-    "microsoft teams",
-    "ms teams",
-    "zoom"
-  ],
-  "design_tools": [
-    "figma",
-    "sketch",
-    "adobe xd",
-    "invision",
-    "zeplin",
-    "miro",
-    "adobe photoshop",
-    "photoshop",
-    "adobe illustrator",
-    "illustrator",
-    "adobe premiere",
-    "premiere pro",
-    "after effects",
-    "final cut pro",
-    "obs",
-    "wirecast",
-    "canva"
-  ],
-  "networking": [
-    "tcp/ip",
-    "dns",
-    "dhcp",
-    "ftp",
-    "ssh",
-    "vpn",
-    "bgp",
-    "ospf",
-    "vlan",
-    "sdwan",
-    "load balancing",
-    "cisco",
-    "juniper",
-    "palo alto",
-    "fortinet",
-    "firewall",
-    "routing",
-    "switching",
-    "networking",
-    "network engineering",
-    "network administration",
-    "rest api",
-    "soap",
-    "api gateway",
-    "message queue",
-    "rabbitmq",
-    "zeromq",
-    "api"
-  ],
-  "hardware_embedded": [
-    "fpga",
-    "vhdl",
-    "verilog",
-    "systemverilog",
-    "embedded systems",
-    "rtos",
-    "arm",
-    "risc-v",
-    "pcb design",
-    "altium",
-    "cadence",
-    "eagle",
-    "oscilloscope",
-    "multimeter",
-    "jtag",
-    "uart",
-    "spi",
-    "i2c",
-    "can bus",
-    "arduino",
-    "raspberry pi",
-    "microcontroller",
-    "microprocessor",
-    "signal processing",
-    "dsp",
-    "rf",
-    "microwave",
-    "antenna design",
-    "electromagnetics",
-    "firmware",
-    "hdd",
-    "ssd",
-    "robotics",
-    "mechatronics",
-    "radar",
-    "lidar",
-    "sensor fusion"
-  ],
-  "engineering_tools": [
-    "matlab",
-    "simulink",
-    "ansys",
-    "solidworks",
-    "autocad",
-    "catia",
-    "nx",
-    "cfd",
-    "finite element analysis",
-    "fea",
-    "cad",
-    "cam",
-    "labview",
-    "pspice",
-    "hfss",
-    "comsol",
-    "abaqus",
-    "erp",
-    "sap",
-    "oracle erp",
-    "salesforce",
-    "hubspot",
-    "microsoft office",
-    "excel",
-    "vba",
-    "google workspace"
-  ],
-  "methodologies": [
-    "agile",
-    "scrum",
-    "kanban",
-    "waterfall",
-    "lean",
-    "six sigma",
-    "devops",
-    "sre",
-    "site reliability engineering",
-    "microservices",
-    "monolith",
-    "event-driven",
-    "domain driven design",
-    "ddd",
-    "object oriented programming",
-    "oop",
-    "functional programming",
-    "design patterns",
-    "solid principles",
-    "clean architecture",
-    "distributed systems",
-    "system design",
-    "api design",
-    "scalability",
-    "high availability",
-    "fault tolerance",
-    "data pipeline",
-    "data modeling",
-    "concurrency",
-    "multithreading",
-    "real-time systems",
-    "observability",
-    "infrastructure as code"
-  ],
-  "operating_systems": [
-    "linux",
-    "unix",
-    "ubuntu",
-    "debian",
-    "centos",
-    "rhel",
-    "red hat",
-    "windows",
-    "windows server",
-    "macos",
-    "freebsd",
-    "bash",
-    "zsh",
-    "shell scripting"
-  ],
-  "systems_engineering": [
-    "sysml",
-    "mbse",
-    "model-based systems engineering",
-    "ibm doors",
-    "doors next generation",
-    "cameo",
-    "rhapsody",
-    "requirements management",
-    "requirements traceability",
-    "fault tree",
-    "fault tree analysis",
-    "hazard analysis",
-    "safety analysis",
-    "root cause analysis",
-    "fmea",
-    "dfmea",
-    "pfmea",
-    "failure mode",
-    "jama",
-    "polarion"
-  ],
-  "manufacturing_quality": [
-    "gd&t",
-    "geometric dimensioning",
-    "tolerance analysis",
-    "statistical process control",
-    "spc",
-    "lean manufacturing",
-    "value stream",
-    "kaizen",
-    "5s methodology",
-    "dmaic",
-    "cnc",
-    "g-code",
-    "mastercam",
-    "soldering",
-    "ipc-a-610",
-    "brazing",
-    "gmp",
-    "cgmp",
-    "good manufacturing",
-    "iso 9001",
-    "iso 13485",
-    "as9100",
-    "as9102",
-    "fda",
-    "mes",
-    "plc",
-    "scada",
-    "hmi",
-    "dcs",
-    "tolerance analyses"
-  ],
-  "building_automation": [
-    "building automation systems",
-    "hvac",
-    "bas",
-    "ahu",
-    "ahus",
-    "vav",
-    "chiller",
-    "chillers",
-    "boiler",
-    "boilers",
-    "smart building analytics"
-  ],
-  "industrial_systems": [
-    "conveyor system",
-    "conveyor systems",
-    "conveyor installation"
-  ],
-  "defense_electronics": [
-    "electronic warfare",
-    "BLQ-10"
-  ],
-  "eda_semiconductor": [
-    "synopsys",
-    "mentor graphics",
-    "vivado",
-    "quartus",
-    "modelsim",
-    "ltspice",
-    "orcad",
-    "allegro",
-    "zuken",
-    "photonics",
-    "semiconductors"
-  ],
-  "plm_tools": [
-    "teamcenter",
-    "windchill",
-    "arena plm",
-    "creo",
-    "pro/engineer",
-    "siemens nx",
-    "visio",
-    "minitab",
-    "jmp"
-  ],
-  "infrastructure": [
-    "active directory",
-    "ldap",
-    "vmware",
-    "esxi",
-    "vsphere",
-    "hyper-v",
-    "servicenow",
-    "perforce",
-    "clearcase"
-  ],
-  "aerospace_standards": [
-    "do-178",
-    "do-254",
-    "do-229",
-    "mil-std",
-    "iec 62304",
-    "iec 61010",
-    "iec 62368",
-    "cfr"
-  ],
-  "analytics_bi": [
-    "tableau",
-    "power bi",
-    "looker",
-    "data studio",
-    "qlik",
-    "sisense",
-    "metabase",
-    "superset",
-    "grafana",
-    "kibana",
-    "data visualization",
-    "data analysis",
-    "analytics",
-    "business intelligence",
-    "reporting",
-    "dashboards",
-    "excel",
-    "google sheets",
-    "pivot tables",
-    "statistical analysis",
-    "statistics",
-    "regression",
-    "forecasting",
-    "a/b testing"
-  ],
-  "enterprise_platforms": [
-    "workday",
-    "sap",
-    "salesforce",
-    "servicenow",
-    "oracle",
-    "hris",
-    "erp",
-    "crm",
-    "ukg",
-    "peoplesoft",
-    "dynamics 365",
-    "power automate",
-    "uipath",
-    "netsuite",
-    "hubspot",
-    "zendesk",
-    "freshdesk",
-    "marketo",
-    "pardot"
-  ],
-  "data_engineering": [
-    "data science",
-    "computer science",
-    "data pipeline",
-    "data warehouse",
-    "data lake",
-    "data modeling",
-    "data architecture",
-    "data governance",
-    "data quality",
-    "etl",
-    "elt",
-    "data integration",
-    "data migration",
-    "feature engineering",
-    "dimensional modeling"
-  ],
-  "project_management": [
-    "project management",
-    "program management",
-    "stakeholder management",
-    "requirements gathering",
-    "risk management",
-    "change management",
-    "vendor management",
-    "process improvement",
-    "lean six sigma",
-    "six sigma"
-  ],
-  "engineering_disciplines": [
-    "mechanical engineering",
-    "electrical engineering",
-    "chemical engineering",
-    "industrial engineering",
-    "structural engineering",
-    "geotechnical engineering",
-    "aerospace engineering",
-    "civil engineering",
-    "materials science",
-    "propulsion",
-    "avionics",
-    "fluid systems",
-    "process engineering",
-    "reliability engineering",
-    "failure analysis",
-    "power systems",
-    "switchgear",
-    "thermal analysis",
-    "instrumentation",
-    "control systems",
-    "commissioning",
-    "welding",
-    "revit",
-    "bim",
-    "autocad civil",
-    "surveying",
-    "geographic information systems",
-    "gis",
-    "environmental engineering",
-    "power electronics",
-    "motor control",
-    "building design",
-    "structural analysis",
-    "foundation design",
-    "site design",
-    "construction management",
-    "field engineering",
-    "3-phase",
-    "power distribution"
-  ]
-}
+U2FsdGVkX1+qjNIgpF5nx9uFu6OAVb0m0LjdRsDEyAKvS8Y9zczeQki3Xw4aGgXN
+DN7mtt08pE2z49uilykpXuonENAYysMTq2reYz1aoucd4xJ3pSefFCAsq1zOsNzo
+NZZmbvvfaklvNO5Ne3OrnpYdzSY3xeFfWxu4Vk0q/IQzZzk17yw66b/1GieiL3nN
+avPApGNdNgDWSrsIhLMq1EitkmkIjcA/OTFNe8mmtpA5fD0c+DP9m7jMeiXSRCBB
+uGTnGljQz+Uhyy37wMuc4AdKk39I6MKmHqSMQU5fsYfp1OahWgM8B2esYFaHwEaC
+CT+mxr7pTDR/09Iw4dZIbdCEwYctOV4NpW6E9ZqbV2rxXRZW306EZCha2O7G8bps
+Hs+C2F5o7OZ6zdSiacDJXlEKGwSE3Ck91t+XSl82LAuF+kAFWw67VEn8IXPI/fIp
+Pi2y43t/iqHsvcvsYND9/LDQEuNnSbnVOYgDE1p02wWygOUpxpN9eHnr7vnaRgre
+voYLwxOrEz9w+e8tzF1mRopCFPhBooGvnDkbwgVegzwBYTvisC0Zgp9tITtmFszw
+YA10NDAUIEmYNxWLkrIJhfndSri8onQCPazd7XRKumSPQsKLIrEn5JQp6b2NRFKE
+XmYC9aSXmgFizxNro/m3I6aT+F86zFtmXHLW/TbgOg53lKGo/R8x5KXrR89csAjN
+tBKwg9r1wi5Z4jXAo99g+6lW3GtA3Djqxk6UZPkmURZxvhRcQNsm4Np5lsEL1sLS
+92ih1Mo/724W6ZFs0J31I6GqRAKY1dlxlYltszgTySAN63w4vdzSVQOCY/BH4XPZ
+UoDZCRPDT+RtMteMoYSo3Uo5dts1ir0P5jgljP+v5e0T4jJk6gkCWw/jrI5nJA4G
+As5+YJtGJpSA4LcNLUpQK4Zkaqz7Q1ZkQprbNlHmYdCNZfLVnxJ5Bv6gQH1taHjH
+AMydjzQfdlUG0kY5/aDLILqPZSFn3ACRzJmvo8O4uiXBBTQoCW7H7stwuEuxTkzo
+X2f+R6uQBm2J3+sFKw1H5bcTCiFw0a9JdoQdeff7kw15LDLXswsMETNxB0Xh086K
+SlMT2kOLeSH6sBIgw5RQc6yR6zRtK7Xq4Qs006pLglC4Ir5/bWmu+jVrT62Jybrv
+0TUMGa2vylu2ICR1VV67K1igCBXsDheLO6LQCQ13yTlSObUEbSGNDvJPxKK5nQ/7
+jFpHGOfqHZMWvBflTBneg+kn97A+86LlKx0Iy4U1xM6a6gnW2Ld8Fzk+BEJywZ2n
+30gVXjb68aqiDFjprOE9xMKkxacXfWaMTWxS/EdACQbMQ/iqe/l+aZZpJHaOkXmb
+IvgLohTEerBr6NYYuF1574tGGhrzGtiBg1HQ/lyu1asRWY1jDbx8eTqu4xDpSnRj
+pdIgubipZVLmMQv1Oi3lS9weIw7Dr6Uj5syjkvxDS6wTczuH32rtRYkJ9j8COReL
+nMcLdLMuFTrv+o94bj8PXZIkVS1kwGOu/moeFrekb/fn+lULfDhRQ6KCOurxC+Z1
+XNozvy3y4r6UpDp+yXlo+3iPqPRKhYZK3Y2KLylPlGiNMWLIC91zzwk/rxTvwLQV
+qdpVEFQLJloWJm6mPNeu9TyI5+WL8M1ndQ4NHlHuCjH8T2/j3GQD288eMq7Kh3Sd
+NFPuYhAwqPc58Mbt7WS0dAfI/yixzGqb9Y9fu/Pyszsl+QxKi/BWM+KJxTA9Ag2Y
+a0lP71vaVxdE8gCsht0633U2PsPaToquLHcJMZZqwAOaz6mUsDIcIboVtwi3z6ze
+AuzMWlo++KcZ3H5zoOyA/dJIWFHeZyr261xpE6q9OJfR0i67XZRkmxh+xvuahlc4
++OLsXxHQ1BXqzSujEFRe7+Pk0BbnpHRCKrFpeVA33QOPxKlidvTUyQQ6n9XSbFuc
+OxBdf8YLaiIfd+16A05Hab2JImtzM2+poeAfYq+zHJkrfxA8asXTWn2x5rbG93RV
+OGRyo9ynJLhcnS1rTqJE6rRIX9k0SDAX6qiv09gIFUSAmkCVZnchxfM/A0gMiW/1
+lV95M5NJ9t/dtxsQ2c+SW0EwF/3bzMecfxmxAIT0Q5pTKRV6aD+eykTfdqU0DsDZ
+QX3eL2oNl3jdnQzKdlSOl/ScoC2rP8CTIaiY35NtrK7iUAlkhGJ7Rc/KxQAcV3wh
+4txtc+LTu94qZLR0YCZ2T67gEw3T0rtGFFmZlKRRt5BoGxhGdhjD7D97Pdk313EN
+VbsNBUwPuYF8pJOUd8jCwOGr0qFGCBd5cfmfU7GXeiY5PhkZjzQsaPfwKVWhvFix
+J01zTFciAQPhQheyIMdbY7W+ljiRmQ9+1oK1YQWE9pA1xZDPkIs5lYGmohNHsin3
+qbbTvG2ffpGD6Ns5av3MNobU35DicUQiSbO5aegoNXPtJwkYTPgD8iDHogBistK4
+gMThlp5i2jOgufnp0SACWp6sY3hbC4F0vkGh2GHu3a9Zen874MrahRsURXYMG2qe
+qpQPdyO7l09vpybfjsZ2PMtxK1Zaxh0Uma9LrAy2kP7X7lkZFu9qsqMPIC1LAG+8
+UsmdkJon/ihvaB9paSXw51WsBuzbek5hYySH+j5HoKp5Xg9y4FxAiBUYwp5sTzS+
+dFOErBsbST78yoaN1oA3BMIdya81XwVnsfU/aLlZ1zGcVNENOW3u2oXquZQAEo1w
+1DK8IGLdDVgvl4PQBTttClyx8ZYu9FpkRnQW+xLRBYc7X0yiVyibP8hyUxEeLPV1
+LcWSgvQGcqhKfr6s2rp/HK9zZywsOfb2u1EChLdR4DzLNRPU3nXdgO92nlDGMmOQ
+c6WW45ki+Lp8LDOma11yw7wDaJDGhROFo2nFe5sjh4WttzwTCSyVIgH0q9FbG0IT
+Ia8UnQVzt0ZI1UW/pw6tps6H0EPCTei7U+2+K+WD93kMDcbD+PVQy2+5u6uTHJb8
+x4H/LZhojBuj4bPEz8oF0GiQOyWVCOiBdwdHCEv+IxE3PpzLdJzLiQWVUyAyLtYX
+gJlGZdBie75rRpeS1Kr2KEnpvRVMIL6bz0ArZXT26ZjuG9Eai3Svs027vT93EmJg
+2iQWFcBDMfk1tC9SjAEUYr9HCQH/ek3D8fTs/oQ4lgy03T4kEkjnRrY+HpareIWN
+gP8ITub1cecS72K49iacDRjfm2laSJkf2oIw8JCZjtnm5fKbbJWjA6dKQpfIzhpB
+E8/pBYxzUPNcZ7ZzGUX4DFNFdI+srIUQqDmtDEOXHMmxylxtDHKPsSO/Y6JKGj4T
+w0Y6eYHqiAXs0TZ1KWofMnbOoM+xIeXqDfCFGphuNqNDy+bD3ApJfKB35aKjhwuG
+vr/UJr3V4nSkesFGUxSVNLaBV9os7yb3hRJSuk14bo7mdVyuQWpV3JpAHQmfSdSq
+HRG9yhUfx5P8cD9Rpg5CEN2ASDU21wAz4npU6aeBSBiTQk5KClWbIDHJmsEEVjho
+2cl0NWrCmTbAcvq7i2vLDvESzlYay81yaFv/HtOX+/sfrdHZrDR0XZTa1Pubpg46
+IyOG+JpgEhGkWWiSyvJZpXvy1UONrE90J+Hn2Ws18NEHuyJYRSzBLmFoYyWyHQIO
+t7ZX31/WXA2mmhPCqU23h5SwlYRnSAo1yhMx+LARhRdU8u110rEpMCWHjqgMQmm/
+mc4NaNNNX6UI0vywY0Mr7Rt7GJDKHL/rrx8JffhJ6oYFWRtJLagZC+4lLffEU+9C
+iF9RfE3pZ64lebOnIVexJVzJ2pZDKOpo5smE+umU4z17D1JTMG+3KUxMMZrquFhO
+RinDwj0TjzcTijQe+degCzP9VVWOB/JnIqqMh0YsjNySwGHVbJTYVReTFE7nfsSG
+UeeCpThIf+41X2e8gCDs23fcz6H9ccWLiG8kss3FVh0VM8ULnfuUxx7NkJW1/CjU
+TtyqwJJo7nhuSIfZ6sk8kAtJxBJj+q9+EaDTvMEpnoqGcsOKYVO1mMALFbLZ6rRl
+hFCGEgcc49KX11VfMuzp/akofSpcXk4oJ/s5LYbknR3ZW2+fCSkBjFgszsiPS/gy
+Bs4qVxxeCzSpqvrSbql7Vo7bCN2VhPjbRUmaocVWQHk0Gh5uY/tzNttVO3uPQ2In
+/ZSJBNAy5LDOhULlFnY6dX+2wfCWNqzyiNJIUTXd+DDTvVKFYQhtADW0we6Cb97t
+vwLmAHHaMyrA4P+xiyo0AI/0ms0JafAsPqPAcTH99UQKQWVEj+gqDEucdHsPd+h2
+wS7FA9Re8yRb+V7W3xmwQ6B5V4xYdQVh+N+H7NNkbGNzYhZc62T6e+TdWteblG9F
+xtKG/yXK39LbNFTULpwpIl4NoRjkfWhc0wS4YNwpcuBGMI+2hTHZ4zD6R9v4XKEu
+LlDbMndomrCLBTYGFwNkxjlSvTEpacu+Vgjq2aQKgLhuOU5klASZj4veR8hvZZxk
+qDqUE4JhWJwP5V3d9N+C8yeRqy84Zaz/3QppPQoMFvMH+1Mka8yEhGclbqHDzSMb
+9map60IsBoRiXTO1zXBWfEeSn0OoHKQfa5KJPUJF4Tccq2VY0cX0AbUrwocBx2V8
+fuappPw/gNHtl+RUR/A12WTMulUcUO7aL+4ky4QQK7di2VTwwPS8O4Q5kUchleAj
+J+3+RT/8HE25/P4PFWTn727te2gwQSRjNgKbH7/7crPr/lraBZ+D/IjXmbWzUDr5
+XWKmZ45KYOCp3497cMG6kxl26QYUA5IWt0P0IWKrhPEUjixWmIVTWX0SNAknbk+D
+CUFCftsxEcDjVOUvuHvX5rc/oO0WckE71CNnHeXSxCOF41pXqRv1eulyaFf/UKsx
+ibQ8MZVYQxjJ9wBc6t96tfG2LMDD2E/I3OhBckkVUOP4FOR9p6iIeOlpwBl/50kf
+kn4CCEH0ayJgROA9SVEn3ZQIqVsdxcZ/2JmQCANz2FscVnsyiyKRSbfMEmfg1MW8
+ywdwYLLxHM+oq731o2JDN07AHvUAc1NWKyra4Yi/6AJKeqWLLsaaub7S+G+Y+f0v
+c16QSNpkhI7gcWHT5+YwkPZoj+nNC9a5lkaosRB1ppUbWp8A0jgJFLenRUNk5zFE
+qa8Ez9FRvxGGT9Gli9Y5Z5px0aB01QQ5Zm/olUmcOBsGcBZbaIAR1kI5L1HQgoQk
+/5dzg/+w6//fPvj9IZ4lAjQNVbUmak/5kvCbYlHSft2KGPCDmxdBWKeka8bFDpz5
+FmGYeMdDHuNU5BtyUBjeqVis/yxidwj4gnZ4KsLP9BRpWymnnNCgKvEb5YJqUk/d
+52aSUjvka1u9L0Dyfxe8ugxLNr7zITGcrXe7H441gc+PZlBkliaI8AF2EF8aXtT0
+JThrSwAONOb4j97gnoGtt8gtJY7HnEN8baiHCF5fKl6F66R64kTRoxRdiGPr03Qj
+mq7MQZLF6d8rVSmIRKolW2+qzCS9GeARTzdUWx9ApOfn/iUBF9JyNEs3muGlTsFR
+wHNFubZjGUzgr4t2AMvbO833YL44jx7QNGnSyERbAR+wgU3twECr2HwtpX9Pzs0y
+aLoBA+29XuvAuSeI9/XHl3vroOjSP0bpCgzx1I37zADWEO62m/l9gESo+lTlmOap
+BpnaQB3gFTkMXawYRK0jPlbFIhXAWcFBS2O90VCrOqkkok8WhjAF0JifZCGxoVwl
+TpVJKyMLgyDRpiBi+EpuhF0StkilQrBQhtoATGugJLLs0nU97XfrN4992Kj1JExy
+ohGJSM2KqUXbfvvHus/sGWabPjDzmEoxn7GHdxz2F1MLqD75nfdkzW+Kx3cUqpXD
+t0UhuPtRAcrMMvWvJVJDL+GN4jmeE/Lo7G/hlLgVOhqalw3fnmhrms0LV/KfL9qL
++XcHg4Pb/Bms9Lz0YiUlKKE/6DQth+YJrH26UQ98ZGPpXoGfBawv5uMkRJsEdNqO
+o2s4fRvxkgobFWw5STdwGJqXsSJgnQ9d7Ymkvrn2TuBfCIq2il37mg3XHUtr/mps
+qjqxArzpQ+kZ1BGvq7ULestg0hlNea1E6zKqfHpAwH1fdrytphtvoedQ0/ylGTbF
+OaKB+vZeUB5vXirDtFT97Gn5eJAf2PNlUTRdj7DptoAcIeeonhGAGSWjIsV23JFY
+gqYmfvdg21JvnBJTBCcBuwpKW2ejdTS6wpkiwhSYrckdZ5yP5xL50GvjXZ28x9pD
+u9LggMsHVxV7RqdnBPE3jjuvpG5viE+x9u1KxrV5xF5ARGnLMamwwNQ3fAqk+PKM
+afDY9vGViNHUSwpsFmMyuJ3RrHDw43vIf7QBg4JphGwCU+qTYcGTR4Abp3EkY+io
+TT7hRgqvHc9u1Dj1nJ8+zgmZeQwZUkD/pSkKdVzctNmIhZtjjFm/itYG9Tjk8U7T
+WJrWdwb4ZoSE6YH7QpHeRBSC27Gf6YH01nT7wMxCIX9HpWEW/z1NWuIne8P+0W/v
+kEQVk7DO/98PK8g5vnMk115R7QY7mfwcM3cF40Q5SmEdB1LOby4PkqIj0FNZop5s
+e/gwHPc7tLsWb8yufU6HJR/v/waTd7ipt0lH+7eiQpOj/Fo2dbAUkGQsQdbZyHtt
+FsNSz1TbrD/jtCR/nY6lqkeUSZDe9qhjq/c4PZop1fD//Hbm2HJ1lT3BDb0NK4E6
+YJyeOkc2Ag9P8lvw3I9JjcoLbLRbPUgHQ7pSwwOsMMcB5K5aYfSRNKUztO/J7kw7
+bZdGpOJmEQkf/UZtA+rMMta0Zwe/ZRed6Vjcbpd2uQtXBU+KICFph5ldrkt3xjcl
+t7nJRvB10ersPT/llpb7UFW1OuGNNcyPybRGDrt9H6E4VHS5kMMJrdMJHFe7L6/o
+nwdsZv8iUqQXLglwWIa6oN+MIOV5GGTBOJ0KcuO6X2DQCy4O85K8mzwF9tzv82a9
+bDxVOnVWoDvitwZbJ7dFGL2Xmsul4L9MUCErydHYioEtmn9QZzZVcjoFbEHX5cqx
+lFqMYKW9Yx1jO+CkNLeaWh7HZHmnrz9zgeA8BH2jE68xbK8qCkUuHcAc6PRAITSJ
+zn/4urEkxbbr6NdhQNpyGVpFFUK1eiN71HCrSwbSZ842WoPXlPZPPW7ETLQsUR1m
+yQC0E9PEBHE7F22O/zcvJJj+GuSnmwXRxUtYkcdGea2RcqisPR/KFgEP/2r7KAPn
+CE4hI+QZ2qrWeIWTVvvqFOlAS7J40/RfrmMy4aNvAM44bOuhwyCvXO0n4lNqx0Dm
+z/x2USz1c8nGPe+7y+TrzCUJLTQ0kIWidNKwzb4JAgIgEPuW6R9KsVT4WCB/m2yz
+1NBBkWVnSclQ1S/uzFzb0lNsx+zUR+rNnsnqEkPZiBZRayoBJ0a9NtFnaUJmrqSq
+sn+lOpEvZssOqOJMchEZjb6ktFYrTft3n3geQLTTV+XNmJydZZQrBN91aCgbOTHV
+Yq4Ha+ZtidWC/9F2aT2dFWAEcvaBdJbvaB9ALVE4GAH7fIf9FTDot6Z8x3vAn6JC
+Si4y6XczWkgdqhpgPePk0V1IVtDd9itkiDal2rMgNRtSx6/VPxkCzHCKhZWjmlb2
+kGTB2BO+4WounYtSOo0wYvD6x4KrCjK9Ela5ZLxu2NNNh15yVxBsv5dASd49bIsc
+89cdKZq7TDw27cyB61XZQ2yXonhL+eiPafaJJAWNsvsrBGrCVrlMyae6dQ2BIo9f
+HgFUleI8qqT7ft//BpDWmFzJGpYoW8MUmITtxFrOdP4+ObD65VRus3Ej1yME9Qy9
+cv69NXQlI21c7xIt8e6exTq82vbhLwbon2hnenjReY9e14ELq8unaV77F3z/4k7O
+kUxrPoVJyf4u074VWjd8bMhz+EN6EN8/rjd+y9H5jKWwUGMG1dvW+KV7vKhgkFdW
+x1wXkF/ga2wPrH8UaHkDc3BBO11uImq0CQThzmuq55WPpFvUjEKSxb5WaEgdEZTN
+gN2rsiUM0C4Yrxhpu9lffrBt0cgQoPJ9bYXCyIJmOkQdgvrmv88MZd+fjTROZLh/
+znQMNXRkmO0i4sM2OdAc8rYf+ZoJ1Atfemhy4TEcK+y2tf6BLAOug0GlUgMNkY8C
+h6UxLitJih/SZHuESL3IRmxbjvdHQ0D3tlnGhlKGnZSf/42bbrcNqLpnU3wcHv8c
+XgbdbB66flHEDejObf7LEdX1xEB63cEOB9ZEGahrAv2E/Mlba1xSjwVSFJjH7rtw
+6gRKCpfkvFbctGMpVej06FS7UUOaFn3X2Lan3obfWitYEdNPdazOaBZpKSohhhH0
+EbF5KUS/VnbUIThK9qZTulqF4zqNKzGAD8kLiBEhb+7y+RNzUgMRfSoc5vxY7TF+
+nsLZV3dmqw5w1zscLIr3rhe4EsEVVCv5uH/fD4LZ1SlMlrPgxr3GME4Bnyj4uNHL
+aZc8kp7BMSsTklExLUTqrFFbX4iilDMs8DO/sOKy9mYrF0N04dgTEV39VRvE+sGr
+9iwDbTSmA7MU32eP+cloTGapDAgh7NM0yUS6Rm5nCLUcHxd1BGQFh0NrOGUp24AV
+EGsadffI37LW7dBE9unHcoNkBFF+fa0dzkU6Hn775viTo8lBH8IK/PD3ahZmqX6f
++febYtcEC7QGCoLvXzI8PNu5Yzd9nCItNtlVS04muvN2GMs74PgvmSfJvySHGBDE
+FOruqNp6d77N3DL/mSymU1wSuJYI52A66SML1EkCRKnth6GAbUReJCQwPUdOFCzu
+UEax8pjlANS7sscx/mmslt/M9mweygnaOR96YxAudcNaV09uDaYesrf3c89eknCi
+imPUaSdHRKax3DkYTg1wY5Pawd39uA5Nyw0MFcOrHAzjnnbO0GqZlMLrBs8v2WkZ
+p2ayFHQ89Zb+zazwSbO+6vXzCcHoKKr86QT4SP5q4SblOXGlKajgH2PTwzTpd++u
+e3V4WTEONMoM1YvgU3bG9C0L/bKRg2VaksCwVcQRRyBwy6XhOAZeDFnoBn2p8azY
+TlFPAu+nN21pmS5kIjoyigjf7+EVURzYijERyNLAbJxtEQRKjq0/c6wBbBCAkdDB
+eiaphuoyJ2Z9e/T8/KLSY06Ga1VG7hhfL0HCqnsndCiQqrYmSe4QNmY3Rm2m0ETZ
+XSuNH3cJwx30ehABGoJ7gF2AjJ8wcq1Vv3n/b9nn3IXWfu/mGp96yZT8EfxVE+vg
+RPh9bJLh+Suhr4pRqsYmpmn32TBW6qm1gGX6gihmMgMvze8F4n0NvPaxeMymIGjs
+RNZ8tA9jbYB943jQWfyzFps4bQVQV/g17++NpjUpsPXsXDtHGg9+Cc1cMJl0x9md
+N3Iri9NJYZ7XPc+LmXhITuihHWI81y/RbcWv9+FVyJnRcsQME7R8McDi+qvI6lOv
+zMElbar0QGgLi1LC4RG65VsrQ6kgu2nysRYaT4HmPoUlOdxYe80WP6D47+kjg8lM
+ywV7sQFiwRRUZAfxLUujpohU8OlQL3ej8R606ul3oaiR6xu4mScQNVPd2xLGPikj
+f4AV2wPJn9EOqLaZTd6E2tUUtzBB/ypl71eTzk5lI7zpP7/jopGygTKjzAioP+cS
+SjadGwrsNgRUKWd+VnDf2umvu7DYr5RT2ZxZYJXZeLcuj0KpdfGIDYfhOiFVeSfs
+dCaRP7HfTemE7X393DueARu/vnruZL4wMyaISuqSm0aqndaOITPU7BrjLehP6HV8
+QK5R46sBJHJlp/USiMzym1+r/hPcMRDhGHHmFBr42tpAd/I1NnMwZo1JJowPW6jk
+ziNgm0dy95zhQeWlwzHI4fRhKuxtzOI3TszwoaySB8fM6WVUq7MYlZnZcfILa1/Z
+39Iks5dhUHoZioVi5LMLkR/U02Svt5NxjIEsnpdirDhJTRShuIxmFfbvmA/PdaJt
+438BGHNMrFxnvYdV9B8CgmRgGAab8y3wqY3HJ9cBzgzwezSPPKFrKf0t/9uCZI87
+0+Hk20vTuic94VKhrv10BJMakb+6ER9U3w1kRbXn8bQB6HE8tDVWhvoI7g0z0Gjk
+v0fovNZrwPOEqGboJVCfHLhErk+uiOE4THYKyUwT8/BeRpPo9Hq/yKfZdEviJFEN
+m33lfpZxOekjILnhi6vaSTRNNXmwJdCaaNOjsp+JxS94Vwk69XRjFoFfnRpDSTcS
+ih/mplYh7zZhBlViqOoWWVwuYHbUHvhMc46UGCtHRIciQsQGOQBWhJzmc3EF+DT8
+uX2V04tEFbGFJS82dOyNNtTBH/8R4AvBopM76Va374WhJkWkR5A7PRnBwiGevUjB
+bfzmKB96fKgWGNCN+iRa1vvArwnSDrk1qDgx2jrJeZlUuSEjcLfioBbH6maVsR/I
+D86PZH91lWBw9Mw/wwPmB1+uN5DK7ZggBWurlWAm0OLfH+JO4oJRX1DHF6IS2Zox
+1woK5d4MlSM+0xjTHMsCsQYgfAbRS7Ro3ou32ZAjPvOeYrm8ZHKOnX1FvRq9/NH/
+nndAlJf7zQfv9/a4j3jy9V94aKzDYuWh25B375bYY9CZH8jEH+WGKV0XXwzHGmGI
+7EO2oOoxb9i+NLLHqk/lu6L4U0ExZoAWG5WrCACN2WG86saRBR/K+qODMCM++D2c
+G+IbBGVQFq/dR3OkfgOklNL2DoVceLheVOXbP88JNGhAhyj/3RNHYxNuo8SeRzFx
+B3gAtAXlwv54V9V4lrg/i7I96XSYcRyT8Iu1MK7PXVakWESJ/V22eYx5TJlAF7Xc
+0QhkoJGF0W5grVWI8iJUGxmwbx6HFkJ/9YBns5dCRg+MQOORfp/ISMm/Q+pJS3Qj
+Gz+kpYFwJ7bQLSYO5a8BalUOFmnElibgRY7qP0x+d0sf+0Mnql2IJask6eYeFqmG
+QjkxTvbZCGnMZcaRHxQEMpA1DNnP9ilhmhFdAoMMNRRjqLKQHAWUNqXtHqLPeqqe
+l9b4pSScsYkoe9qguX6uXrMwUOq/djTuBDt2ttNKpwQTZ6GVEuoGX1Gg/6dLXh0c
+2rN7FFq9FrBndH1hpuBTVLxBtzYDrO4f+XxactENX7vmOUd5QcDSDft6Eas26x6o
+8DVO9tb5wDZlbzNwLgUOl4o6SM2pOKnJtYLz7O05UuktD1G0aGilNRrtheoYqMK9
+kUAqwlQxkpuV5ERLvjCTiFL4KrMOF1R4MZa+lL6Yy6PsrEWtWGyUS5WGmWfpYU/D
+EE5Wvs6xIqXPTuEIMQ3Tgz5fARs4PACgBtqoxqXKVB+VAdw3TLqUJf++UUsqoP6s
++KxGTrw5o+PuZ4NHpcG41ukR/+gptnH1BOp3uFObCPnk0aBs1D1XVWOfesYhiPzw
+8vNucBrSMSd9lfd5qTZ74AMnt7ERT9NYZxDC4Gc9oLAWCBL08GzF9l+cuDM9XkR8
+waQDK6co715zPWBRgad8VgC4tVeJf6w03xEb9BdDWIShnwOztukxoy7Asidk9GaD
+zcsw1snCoXBNJxcU2oUOXPHe5pXbipB4lL2gBpmSzgv1xcY7lGu8IEyagxQejZRO
+tf4RueBshX9qhIVyDwievvy4AzCsqRq28gzYJQDSxLA02vTmihcolvTDpy+PIO32
+5mND4SvgjIguMlR+leyFSWqYlDshB0HetqTU94pe1HfNmwkEH+8UmxewKIPHwYtF
+Us0bSgoaWkkTEB1OTwjZimipW19msvyGJd/CTr9r547uguWnrovwgQrNgKvfeZFT
+lQW0zGPNfgPjPo2q0o4h98k9jbL+yFOdBitDh/PHLzmpIS/MX9NSa+VB0ro7Hfbx
+4qI1NqSo6fpLZHAImSBMqAtMeZmj8jV0pLBrVEHENtyLQMc2RiGQDYbcwJiV5pNy
+HufHLbl8sdZghgp3qGDqwASarP9Smm6RqZoAhP0sBC43p5uZjtnRbJEEgPDINBNP
+tNFExT3YPLrhn2djuNmIpnXyZqPskcqGM3UVB3N/k2lh+XSho+HfBsDJYFh3Gmeg
+zxsiqMHp+VQQQLRz5oDRquh/lsDdcEEWS6S6bTmDcDfP1owYwcJWnL6W4vOzzZHR
+X73V+o7UYnEmc5DTq9zUCtmnJDrmybzABbzIc6727HGAFNU9HJ23jgDhRryOT7K4
+l10U4TY49wYzRjp57wBT8c209EUF6I/ZdcUzzwjSw6LVtD4Ot9NvrVSzybcJKGwL
+XEGfSi8FgVdr4kbkvR7e7x5JYZEo3tGPERkHv0EXjwH7Wjil6Jc4lDw7RKr5+qZa
+mPd/ZSqWE0XjqoCmG5V/k7SQSwoxJatufEnmvrl3+SdwRl8WDYap/jDs5l9J8C0y
+4R886EXVluZyNOvwQIIMZsog15v1oLSWtrLhQuOFM4snwhj5q7nwZH5h/xnvMxwm
+e7MTtceYsJyWqbGcZ9Qgiqxhc/2lOecI+qWVSZPtNnA1KoB8VNp1OylsJIGJs7qE
+0OZLIuQ6D32GZf6YDSv7bQPG4g/gFP6Eio3IxrJQcCIgoY5d+fHWwH1CxwFejapV
+ULpBDkpgWyIBoV5zdw4d6N0WteMRBfL+dg4vlxvGmg+SYcHRdbH229sGxBKuBZyh
+rae8wyRVfMAREvmtQj5rfn5HQfHvDdPWngp8YlZhy9Iolmt9F/y54/DB6ydJ51yP
+6CCjuwlPIDn/apqNw248ij7ZkKLBiveyLNo72qviAo5sdu5jrN5PL+/LN4j04FAS
+s+MfnaD4uZlQ/vrJGYm4J3YC4mIzl6wy3Lmoo5tZfyqDLggW7jBT6OxZ2coHJ3Uf
+aoiiAEUClXTAc2WjoRiwocQEXsp1zOsF/Ti9LLLbNfS0g7jzoVwuSqsLx2SQS3p3
+HRCsmj5wtnGk7SV/RrPoh800Z4tXAFla5uVxEMXp9Fo0ueULNoNzHRJMBnJVU7Oc
+vQfI2vHq67rg5dx+6Jgf9cITIy7Z3jpW5KVRswTOQi/TSoul8HvsblQhat1rCcqW
+I6p8prJR3Njv3dnnzqja8PTawBS1gdNx+NZfZHsXNlvmjeVrr/bsgG/5Il0RZKqg
+gyqSCDmiMrghcfgxphn6JlaLt+lWsq6N9qHO40L33B7uNqEn8h/DgVlhbJJDbrv4
+fhweclo3tZngTrRPhiCNkr0X1DHHJT6GCHnQDlwFEtAZraJ6Jrr5nar1vwx0ZCYg
+cacZp9g2vt8uYeLW79yrwhshADjC2wk4uDFOxm6ioBC1A85mXO9xKJSUHoZ9lxw4
+5QoSrR8tp/LcS1wpaLBD+xRtwVxacOod6wrxtRTL3MFJpkJY5OBpI3iIKmlZI60H
+crJRZnEDFZKnElZjlmeRaDjBRP7ah7TVLbEaTEKah9ncgmHSqof7mpQ86OLFvra0
+yUlTcj9yG9TfAFoCZj4Y8nD/xhNnrYhO4BA28GqcTFUdiwHM4W4yIOQsNI/gVA2P
+r4kk1H+hLGye0J3x1wrdUJSCnAVOo1f8AOkCv2FUwjMC+oEzWn7UQyZBVv29gyo5
+XW5hhq2dG13M8P4+71RDpJeK1UBf5pZ8giakI5erIwB/mzCAGxQPKaGNuwrAg7V6
+HMvP27JMDXMk4SkWNwcg3ELlzV7Dz8uew2g7v//My6vxuMnZnCQuTfUFk3hLMU7p
+V9DEuDUBQqfqtqhx8ky7yeEUlHMCXe3CUBLOM+T/f1DlZk7QbUyHYjX5OOzD4nF0
+uDy+aJG2YMXbl7QYB2LUwvfIETMArW2upz6jJdWAyBe1vKyRaxq4bhzwOlqgdNtT
+euNyc9LvP7TeZl67CGC6lCeAj86FSQ6QovUy4TaHbvhpNnbprTY6spFfJasUtkMM
+u8WbE7CX5dpiCf9QNZv1lOv0UlRSwwGprCj6Rv7gUdRw/7gjMokRXi54tnHELbKn
+r20muUvOYEB2MIwTMVnufRypYIhsq7JWuZ2mUQiu7O8pK8C1yOb87Z2qgvCRpAQm
+Jc2EQJSBQMvRtHpo0N1oRgozyFdkl9r/RgHJiXG97qN5EKaZOZUacZllW/yyHXlz
+aN4VpSy/XYhPJ+A7sajoo7VIiuSJlIdZAf7Zl8TPyV6uBKa3MJ7bzBceFl6/NeHg
+EmrsT5dmkZPISoYcnnPxUZsN5o2XIDG4INdGQc/dFP12KqFhBX39ySNPQPTdLz9v
+3YrJbitTL5a6vlqoteuCrXGEwzX+FpNX36Z4MM/hk9nPcRk25tl9ugmAaqIvsF3x
+ktb6oDjBHW0hhTgXihGHeDIorbYy7ohCPFrpQEDmGqhHaak5kevOmLkhZ2sIroAG
+fJ4FoB88bb17gBNiTS3IgeFvrFY9jjQwsPo4JfTp3LgLJ7Wgldp1ydtkjehcxFSl
+CxCpSWmjPP46P0Z07xHPR/b1CCx9sqxz/jIJqQRE0Hsvuwaqng637yR6xNOdxwxq
+d82PSkwCdsXAHAfrdxVBFdBm7+zaCL9KDCjkBIENVyxbGQyTl0CIdD3I/aKt51Yh
+E990J/jPHBbODAKWY47R6lnVm+8Bh6E+XxZ9NSk4JQ3WWLzps8TSy134ydDIblPZ
+EYK18WcxXwQPIbyPW0BIeAHQt734GiaJ71mLezmVc8GKCe1hAZb2SYz1yxqptFxm
+jrHCNbjQZ0uqmf1dSvf3hKD8cvN0F2DQ5W/LAOSw0BSFALwDsxnDeP5QHy7Yq6ib
+IkZja/YFY3IsdNPUmV9pJJNB8exvMIToFR70IvRqkMfacmi5AU5c+d7bxzSv7aIM
+AMsOcuYJ/vnctVbTnmG5/e/oH/GhpIzTuUwY52Invsvzesvw/thN2X86zBNZquxI
+Wl78Gj642mhpMYPzyKDie5DUc6tnhofhAUVHy+8aDDpEUr7XITnv086iIbbF0EUk
+Uc+1CQZvFYoNC6ySgKN6zSu8RpsuiSp1Jme1U+qeymW42KdCUI+OFECaB3jmq7SP
+n+rjI5inok8ocEtqItIPbwlDPnV3ZI+ubVuqjQeRjEmwkE4rNShPS0Z9hJk+dyqt
+FwvD/q+OK+TUkgqNrhIvwbBiF8+akgJhpgojVd5vob7r/g4i0t94hmDSUG8PvTfS
+EhB/+u37w55/o+9GJht89ah6eAth7iVcOqVI5abvXVrvMO4TRdJe98KVPn9oQDpr
+UhRf8Qu0HmBCGeoXRDl+ix3qXH2uL+tyNHO0uU2VfTs4Oozn66i4+ud0BphX6oJo
+LXtb+dfY4DI5NAXov1fGBeY5GSKJ5Zuk9iwEwsAUOM95pJVU/h7GxIIzH9DZl7LS
+OvxnSTGSuoE9720wKLqymJ6fRW4RhPCMl5OyDC9ALHY6MkKuOp6y2dveBdwFBgL4
+VHn1T7ZZMneOUZBMbyrrwmm7fy33GdRIdiKEmbYJB3YWbjjJEffqXVdmVt+mkAay
+qKHXyKH6woce5Eh1zITopf/plQlhZFA5tfVQL41CuIzjlJE7FqCCc4jx65Grs3yM
+IOKuhbRjok12myjJTudbXlKxYkKudM+j9eoMTvooQ1Xh6xeSR79AHGxh/zJ2CC+E
+61vanppieZd0JlLL7a3nhs1reK1fOAS4aLBrB/o4KRsGEZOYsanLufLkTce7HAuX
+1Vze5sp3XxBS4XgHoBv3Jwh0ifog4MDj1TEXqnpks6MKtO7K0042PBaYts2AY35D
+Jn40FFel0nHnWv3drCKFRlzwxYliH8+ZNmOnInK5rwaiW4uNXbitNauwS2OCpnq5
++PBc9q3kQ7h5NSatGPQG9AXI3nswt0R1gtqPP98kIDNgXuyXYEpyjUEVRWPIAHLO
+vlbbJm93Br1+p5wjTwFQq3EoXrQPVd+vcmbBhxaK0SnTBn4hjDX0r3VXfjWcgVZu
+54WW20/kzgfGTsRccTk5YYdaj11jsn38GD7jo5+GAbQOkZboetSZgO7Ielvw2xdA
+8lJMEUZ/+6NWxymSnX9ZrNQSiFesYqt49xnj3f2edwCSvqHzvvHnYxDGWkHK/e3N
+3QakHzwJ9XmfmSJmUbhTwB8m3un+ZFe2qPs+DZPWCnBCM2LwLW5WORmp/Ks9sCkj
+BwdtKaGSH04HGOWQ3Tq2ElSf4IDbkkxnLA5J1Y90z8G/VC7d811jyqUmSS8Hdtzs
+5ZW6FWY3iUVLCAeMlVHu7Olll8EFbgTtPFnt8dZo56FWaZfTWJhfUV3/QOFrvCRp
+vwK9/kZykdQPCYL9Ytghjc2kg4D30KPEsDZb4wVl350561KQLRrcP5YkYgbHtf4B
+t2JdqL3RC1AS9uEZNa3S5SYBxWeXwUKHEd8HUVyXbANO/QeL6nEeFmbfWx1aryIL
+xWS+1ZVdXTFtcuj/TSwkzxXyPJWXJ3tmDT7W45MrNZ6SHDGAP2LbXAVRSaiuEZJM
+opAGutOaJexMU5t+q7ghwR7Qi2JPu26jEwANg7qcG/bD2eXe6Fi7sCZj2mjrFw/m
+ctsstVtCum3OlBCYUGEqAxqM6wQK0B+FWIFKu3o8OehkLOn4fyav0mIlqwR/LDJ7
+NqylNjZeXvKvRgS/ApsKnPgztloOg+f7MtwPhseJY1VHxjRjIDxCGcfl/RR2Svsi
+79jpTVIXfv2ksyN+bk+7dHRyVPSQpoudmfgYEAsIRqQniG5kqB4FvVvbMUmkhLf4
+oBCBr6YX5r/TlCdEuK04k7mcdiz0hGiMS3qIlIpob3wUBZ0hbWwUr/crc59SH2tF
+Tu4nidGpWCY3wl7bHr/p00VSE3HfO8EXAl73Sti+/Zq0ffEVPtqmF/mlCj1YS1n+
+1dAb1rckIbWxM4deO1SRKGbJMHgET1PhSlWogcO/aD515BqgS2WbU7RkLuv97P0O
+kQXygPpIpo9MJHuPXjwVosqgZBki2/WAAvg8ySvLkZssnwEYY7zvZhZv3z13Ptfz
+W7ZPmp6vUV29depwJwdAQ8HhwZmc9Rx70jnCNBqpBg6BdKoo+8JP5lbevsJXJFJw
+iPRRVr22ssFSWoY/UeuGARvvJiZf4s0bYCsK+Wu2g7qB7G9u0GWl+6kWxt++IU/t
+h/tJ4s3JBjUWqxDmuc8Ybk+M7S7kL3XaCn4O9DjtjMc3dXGM+hb4KecYupYoEGOq
+Mi/MMBSF3/m5BQeEhhOvvXr1Pna+K3FCnQqQh2mP6fU07wEdTo4GthjTtHFrtwOQ
+664lIPdsRq549BT+fXZarg25b/uBaGRHJ/xyp26MPlIQf6033w9Vxpi8V2fXQ+sP
+SdOxQa7Vutbp3DmhU+kUzMP6UMqSPALphR2XE/mJL68jdqdQTkvKIfVwdUPyAdzE
+VwD2GWms9FQ6jPstun0Ry4jbGSBoe/kan8Lj3v3S/JVrT/aUK/bUrcEGc/wFRfw3
+GMuYPbPdsb8IXgTkwZ/EkVMs4ueP18OsuuLe7ts5oPuA7+kp6nvYpzdhgvztre1K
+BZfizP2A6aq6FxXPG9L2URBmWVhIjYC878C/gA65zjqMCHdGanQcsJ+gZgSHGck5
+TZUZa1orUcnh9es0h2lLfLRCfm7qZz6SCEdT4Fqc4zU7T8U+Qm558kcfBMHRWE9q
+/+N50ENxoJWZiznrRBuAGHGse+clWCQN60XtgoNh5MUM6WSSmV5Dch+dxqVcFtVl
+NgFLmLUZFdIjfvzqFH8SiMPCWePyLVxJBhyeWiEXSFHPIIfdwVabOV/3t3fGOxVs
+ev6v2e1tWTTe6POEpdyAOUfgCQ+RaWZqbdSHloQs4HshOtc7H0Ho7f+Ivymiwoyw
+xQSbmRgNzyZgHtUHeNw1nNG87bxtoQgOMfhyMYEp7mBo/usn1iIilZNYVW3sMkAg
+7LH+ijr0z92e9a415utc72awqg7kLReroo0QJOFtJWqFOoEhmX/oECjIEfln2omI
+tojBjCs7geJnF10NQ2s7/2iqlNRgm7rg43kJW271fo0HW/Y8m7NizVbql+bey2tT
+K1P7B+KfaULzN2HqFOMa/y3XiaMetTeK1SXf6HtvvI2Z3ySAE8QIGPxxRVAAMdfo
+6RI2uBYAbqrRUVdX1jrLReHcfR2Zt93K8Ot9gKEBZksMni/aFJH/I3Pk59XOLeqP
+xZcMZjfvUVyanx/iHX3PA5HaySJaM4bARNxyNlXdH6Q2l3dx0d4ZCrdGccYZMCxx
+enZMmO5QudCHhHCepCiO/WYiSSrQvZHZtpoH9ZPrwvGHkBbBzWDFZ58pX0P/dSx4
+mw2rwhbbxpzpPqSApJfQiTACc3kzQPVLe9oOjc7OPvGJ5C5aIzEqrNYma4uxizIU
+4NP+EDu4vB4zzG57a/B8AFSh/Z0GneH0ORzkao8c0F371LT/VWOv4s5q7GRd9eJP
+jZiVbQ3US65pF5AXq8Zk8N+ozbRsWaK0EqDSTXAkqnWYtJk0RF4XEwjeHeBRvCWD
+Lx1XjDN3OQmOYlxWd8jU5CNWJYGptULqTtHHiIhzODI92awaVeoPTJc5iBi8sl0/
+P3NgZKzj79DwbrbgbMiyuy8B87hfKNCcWI1HJUSjx79vfnDmfNdST9V3uq92uaXy
+sZavPLx4f+3Okh5RMt4IB/1qdRXXO6cabiYPZhvOWNkb8bboDj2UY0N883XsLj0f
+RaakFqJ+03nud4IubebIkpT3n8st1z6+k9Ny6ITvBy8=

@@ -1,61 +1,70 @@
-#!/usr/bin/env node
-// R2-fetch for the Supabase metrics bridge (INF-BRIDGE-1 fix). DEP-FREE (Node built-ins only —
-// crypto + fetch; no npm install needed). The bridge read the 16 metric blobs from jobs-data-2026's
-// git checkout, but INF-R2-GITCUTOVER-1 untracked them (they now live in R2). This downloads them
-// from R2 into the data dir so publish-metrics-to-edge.js reads fresh data. Missing-in-R2 files
-// are SKIPPED (the git-present fallback covers those).
-// Usage: node scripts/r2-fetch-metrics.js <out-dir>
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
-
-const outDir = process.argv[2] || 'jobs-data-2026/.github/data';
-const FILES = [
-  'metrics/latest.json', 'jobs-metadata.json', 'enrichment-stats.json', 'zjp-metrics.json',
-  'general-review.json', 'pipeline-alert.json', 'daily-stats.json', 'posted_jobs.json',
-  'history.jsonl', 'history-archive.jsonl', 'enrichment-history.jsonl', 'traffic-history.jsonl',
-  'canada-tech-summary.json', 'tag-history.jsonl', 'bridge-metrics.json', 'bridge-metrics-history.jsonl',
-];
-const AK = process.env.R2_ACCESS_KEY_ID, SK = process.env.R2_SECRET_ACCESS_KEY;
-const EP = process.env.R2_ENDPOINT, BK = process.env.R2_BUCKET_NAME;
-if (!AK || !SK || !EP || !BK) { console.error('missing R2 env vars'); process.exit(1); }
-
-const sha = (s) => crypto.createHash('sha256').update(s).digest('hex');
-const hmac = (k, d) => crypto.createHmac('sha256', k).update(d).digest();
-const sigKey = (sec, date) => hmac(hmac(hmac(hmac('AWS4' + sec, date), 'auto'), 's3'), 'aws4_request');
-
-async function getR2(key) {
-  const host = new URL(EP).host;
-  const resource = `/${BK}/${key}`;
-  const amzDate = new Date().toISOString().replace(/[:-]|\.\d{3}/g, '');
-  const dateStamp = amzDate.slice(0, 8);
-  const hdrs = { host, 'x-amz-content-sha256': 'UNSIGNED-PAYLOAD', 'x-amz-date': amzDate };
-  const canonHeaders = Object.keys(hdrs).sort().map(k => `${k}:${hdrs[k]}\n`).join('');
-  const signedHeaders = Object.keys(hdrs).sort().join(';');
-  const canonReq = `GET\n${resource}\n\n${canonHeaders}\n${signedHeaders}\nUNSIGNED-PAYLOAD`;
-  const scope = `${dateStamp}/auto/s3/aws4_request`;
-  const strToSign = `AWS4-HMAC-SHA256\n${amzDate}\n${scope}\n${sha(canonReq)}`;
-  const signature = crypto.createHmac('sha256', sigKey(SK, dateStamp)).update(strToSign).digest('hex');
-  const auth = `AWS4-HMAC-SHA256 Credential=${AK}/${scope}, SignedHeaders=${signedHeaders}, Signature=${signature}`;
-  const res = await fetch(`${EP}${resource}`, { headers: { ...hdrs, authorization: auth } });
-  if (!res.ok) throw new Error(`GET ${key} → ${res.status}`);
-  return await res.text();
-}
-
-(async () => {
-  fs.mkdirSync(path.join(outDir, 'metrics'), { recursive: true });
-  let ok = 0, skip = 0;
-  for (const f of FILES) {
-    try {
-      const body = await getR2('data/' + f);
-      fs.writeFileSync(path.join(outDir, f), body);
-      console.log(`R2_FETCHED:${f}`);
-      ok++;
-    } catch (e) {
-      console.log(`SKIP(${f}):${(e.message || '').slice(0, 80)}`);
-      skip++;
-    }
-  }
-  console.log(`r2-fetch complete: ${ok} fetched, ${skip} skipped (git fallback covers skipped)`);
-  if (ok === 0) { console.error('FAIL: fetched 0 files from R2'); process.exit(1); }
-})().catch(e => { console.error('r2-fetch ERROR:', e.message); process.exit(1); });
+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
