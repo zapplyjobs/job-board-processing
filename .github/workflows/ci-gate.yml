@@ -29,8 +29,6 @@ jobs:
           TRANSCRYPT_PASSWORD: ${{ secrets.TRANSCRYPT_PASSWORD }}
 
 
-        with:
-          fetch-depth: 2
 
       - uses: actions/setup-node@v5
         with:
