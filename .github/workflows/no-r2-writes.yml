@@ -1,0 +1,62 @@
+name: No New R2 Writes
+# R2 is being ELIMINATED (CORE_RULES §6 — Supabase is canonical). Fails any push/PR that
+# introduces an R2 write not in the baseline below (shrink-only). Mirrors the gates on
+# jobs-data-2026 + jobs-aggregator-private.
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Block new R2 writes (R2-elimination enforcement)
+        run: |
+          python3 <<'PYEOF'
+          import re, os, sys
+          patterns = {
+            'upload-to-storage': r'upload-to-storage',
+            'upload-dashboard-data-to-r2': r'upload-dashboard-data-to-r2',
+            'PutObjectCommand': r'PutObjectCommand',
+            'put_object': r'\.put_object\(',
+            'r2.uploadJson': r'r2\.uploadJson',
+            'r2.uploadRaw': r'r2\.uploadRaw',
+            'r2.uploadJsonl': r'r2\.uploadJsonl',
+          }
+          # BASELINE — current allowed R2-write sites. Shrink-only.
+          baseline = {
+            'lib/enrich/description-fetcher.js:r2.uploadRaw',
+            'lib/publish-aspect-status.js:r2.uploadRaw',
+            'lib/publish-quality-signal.js:r2.uploadRaw',
+            'lib/targeted-reenrich.js:r2.uploadRaw',
+          }
+          sites = set()
+          for d in ['.github/workflows', 'scripts', 'lib', 'tools']:
+            if not os.path.isdir(d):
+              continue
+            for root, _, files in os.walk(d):
+              for f in files:
+                if not f.endswith(('.yml', '.yaml', '.js', '.py', '.ts')):
+                  continue
+                p = os.path.join(root, f); rel = os.path.relpath(p)
+                if rel.endswith(('r2-client.js', 'upload-to-storage.js', 'upload-dashboard-data-to-r2.js', 'no-r2-writes.yml')):
+                  continue
+                try:
+                  txt = open(p, encoding='utf-8', errors='ignore').read()
+                except Exception:
+                  continue
+                for pk, pr in patterns.items():
+                  if re.search(pr, txt):
+                    sites.add(f'{rel}:{pk}')
+          new = sites - baseline
+          removed = baseline - sites
+          if removed:
+            print(f'ℹ️  R2 writes removed (migration progress): {sorted(removed)} — update the baseline here.')
+          if new:
+            print(f'❌ NEW R2 write(s) — not in baseline: {sorted(new)}')
+            print('   R2 is being ELIMINATED (CORE_RULES §6). Use Supabase Storage/DB.')
+            sys.exit(1)
+          print(f'✅ No new R2 writes. {len(sites)} baseline sites ({len(removed)} removed).')
+          PYEOF
