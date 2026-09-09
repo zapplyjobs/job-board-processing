@@ -3,3 +3,4 @@
 *.jsonl filter=crypt diff=crypt
 /package.json !filter !diff
 /package-lock.json !filter !diff
+lib/board-registry.json !filter !diff
