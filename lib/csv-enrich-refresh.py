@@ -29,6 +29,21 @@ class DescRow:
     total: int = 0
 
 
+def _default_data_dir() -> Path:
+    """Repo checkout's .github/data, located via the nearest .git anchor.
+
+    AGG-ENRICHREFRESH-DEADDEFAULT-1: replaces the old constructed
+    Job_Listings/jobs-data-2026 path that never existed on the relocated clones.
+    """
+    for parent in Path(__file__).resolve().parents:
+        if (parent / ".git").exists():
+            return parent / ".github" / "data"
+    raise SystemExit(
+        "--data-dir is required: no git checkout root found above "
+        f"{Path(__file__).resolve()}"
+    )
+
+
 def normalize(value: str) -> str:
     return (value or "").strip().lower()
 
@@ -183,9 +198,16 @@ def main() -> None:
                              "missing files fall back to Supabase Storage fetch via env creds)")
     args = parser.parse_args()
 
+    # genai_root retains its (pre-existing, equally-legacy) role as the csv default
+    # anchor below; only the data-dir default is repaired in this change.
     genai_root = Path(__file__).resolve().parents[3]
-    job_listings_root = genai_root.parent / "Job_Listings"
-    data_dir = Path(args.data_dir) if args.data_dir else (job_listings_root / "jobs-data-2026" / ".github" / "data")
+    # AGG-ENRICHREFRESH-DEADDEFAULT-1: the old default constructed a nonexistent
+    # <workspace-parent>/Job_Listings/jobs-data-2026/.github/data path (measured:
+    # resolves to /home/Job_Listings on the relocated clones, since parents[3] is
+    # the repo root here, not a workspace root). Default now resolves the actual
+    # repo checkout via the .git anchor; no-arg local runs get the repo's own
+    # .github/data or a clear error, never a silent bogus path.
+    data_dir = Path(args.data_dir) if args.data_dir else _default_data_dir()
     stats_path = _resolve_data_path(data_dir / "enrichment-stats.json", "enrichment-stats.json")
     all_jobs_path = _resolve_data_path(data_dir / "all_jobs.json", "all_jobs.json")
     csv_path = Path(args.csv) if args.csv else (genai_root / "projects" / "zjp" / "company-research-log.csv")
