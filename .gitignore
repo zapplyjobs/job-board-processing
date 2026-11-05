@@ -1,3 +1,6 @@
 node_modules/
 .DS_Store
 .github/data/
+
+# v140 replay instrument temp dirs (decrypted base modules — never commit)
+.replay-old-*
