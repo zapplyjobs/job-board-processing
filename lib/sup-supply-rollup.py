@@ -114,6 +114,12 @@ def build_rollup(ledger_rows, live_f, generated_at=None):
     new_ct, exit_ct, ops_ct, intern_ct = Counter(), Counter(), Counter(), Counter()
     canon_keys, lane_by_key = set(), {}
     rows_read = rows_used = 0
+    # A7 dual-key seam (SUP-WORKDAY-IDENTITY-CUTOVER-1, 2026-11-20): writer-declared
+    # name-form -> identity-form pairs from ledger rows carrying slug + slug_name
+    # (sup-posting-ledger.js dual-key writer). Emitted so the reader can fold the
+    # cutover seam; rows without the pair are untouched (report-never-force-merge).
+    identity_aliases = {}
+    identity_dualkey_rows = 0
 
     for row in ledger_rows:
         rows_read += 1
@@ -125,6 +131,11 @@ def build_rollup(ledger_rows, live_f, generated_at=None):
         except (KeyError, TypeError, ValueError):
             continue  # counted as read; unusable without valid s and e
         rows_used += 1
+        slug = row.get("slug")
+        slug_name = row.get("slug_name")
+        if slug and slug_name and slug != slug_name:
+            identity_dualkey_rows += 1
+            identity_aliases.setdefault(str(slug_name), str(slug))
         ent, eclass = entity_of(row)
         source_family = row.get("src") or "unknown"
         key_n = (week_monday(s_d).isoformat(), ent, source_family)
@@ -181,6 +192,14 @@ def build_rollup(ledger_rows, live_f, generated_at=None):
             "retention_note": "ledger retention is 400d: buckets older than the retained horizon lose their exited rows and rewrite on each weekly run",
             "denominators": "ops_share/intern_share = titled share of that bucket's exited_fps; "
                             "repost_ratio = new_fps/max(exited_fps,1) (reader formula)",
+        },
+        "identity_aliases": identity_aliases,
+        "identity_dualkey": {
+            "rows_with_pair": identity_dualkey_rows,
+            "declared_aliases": len(identity_aliases),
+            "note": "writer-declared name-form->identity-form pairs (A7 dual-key seam); "
+                    "the reader folds name-form buckets onto the identity canon; "
+                    "namespace converges by the 400d ledger retention age-out",
         },
         "rows": rows,
     }

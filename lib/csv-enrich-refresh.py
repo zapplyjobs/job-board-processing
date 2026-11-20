@@ -127,6 +127,42 @@ def load_description_ids(data_dir: Path) -> set[str]:
     return desc_ids
 
 
+def load_identity_map(all_jobs_path: Path) -> dict[str, str]:
+    """A2 identity leg (SUP-WORKDAY-IDENTITY-CUTOVER-1, 2026-11-20): normalized
+    company name -> AGG identity key, pool-evidence ONLY. Post-A1 workday rows
+    carry the identity key in company_slug with the name form preserved in
+    company_name_slug (its presence marks a post-A1 row; pre-A1 name-form slugs
+    are never trusted as identity). Pre-A1 workday rows fall back to the embedded
+    _raw.identityTenantKey; non-workday slugs pass through. Name-only resolution
+    is never recorded as identity here — the caller flags it name_matched."""
+    try:
+        data = json.loads(all_jobs_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"Warning: identity map skipped (all_jobs unreadable: {exc})")
+        return {}
+    jobs = data if isinstance(data, list) else data.get("jobs", [])
+    identity: dict[str, str] = {}
+    for job in jobs:
+        if not isinstance(job, dict):
+            continue
+        name = (job.get("company_name") or job.get("company") or "").strip()
+        source = (job.get("source") or "").strip().lower()
+        if not name or not source:
+            continue
+        if source == "workday":
+            if job.get("company_name_slug"):
+                ik = job.get("company_slug")
+            else:
+                raw = job.get("_raw") or {}
+                ik = raw.get("identityTenantKey") or job.get("identityTenantKey")
+        else:
+            ik = job.get("company_slug")
+        key = normalize(name)
+        if key and ik and key not in identity:
+            identity[key] = str(ik)
+    return identity
+
+
 def load_company_desc_counts(all_jobs_path: Path, desc_ids: set[str]) -> dict[str, DescRow]:
     counts: dict[str, DescRow] = {}
     for job in iter_all_jobs(all_jobs_path) or []:
@@ -216,6 +252,14 @@ def main() -> None:
     pool_map = load_pool(all_jobs_path)
     desc_ids = load_description_ids(data_dir)
     desc_counts = load_company_desc_counts(all_jobs_path, desc_ids)
+    # A2 identity leg: pool-evidence name->identity map + per-basis counters
+    # (identity | name_matched | none) over ALL accepted rows. New surface, no
+    # pre-existing flag; census CSV columns stay untouched (M3/operator-gated).
+    identity_map = load_identity_map(all_jobs_path)
+    identity_hits = 0
+    name_matched_hits = 0
+    identity_none = 0
+    identity_unresolved_rows: list[str] = []
 
     with csv_path.open(encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
@@ -251,6 +295,15 @@ def main() -> None:
 
         company = (row.get("company") or "").strip()
         key = normalize(company)
+        # A2 identity leg: resolve + count the basis for every accepted row.
+        if identity_map.get(key):
+            identity_hits += 1
+        elif key:
+            name_matched_hits += 1
+            if len(identity_unresolved_rows) < 10:
+                identity_unresolved_rows.append(company)
+        else:
+            identity_none += 1
         changed = False
 
         stats_match = first_match(key, stats_map)
@@ -303,16 +356,28 @@ def main() -> None:
 
     if args.dry_run:
         print(f"[DRY-RUN] no file written ({updated} rows would update; {skipped} skipped)")
-        return
-    import shutil
-    backup_path = csv_path.with_suffix(".csv.bak")
-    shutil.copy2(csv_path, backup_path)
-    with csv_path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-    print(f"Backup saved to {backup_path}")
-    print(f"Updated {updated} accepted rows in {csv_path}")
+    else:
+        import shutil
+        backup_path = csv_path.with_suffix(".csv.bak")
+        shutil.copy2(csv_path, backup_path)
+        with csv_path.open("w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(rows)
+        print(f"Backup saved to {backup_path}")
+        print(f"Updated {updated} accepted rows in {csv_path}")
+
+    # A2 identity-leg stats (observable read-back in BOTH modes; basis flagged,
+    # never silently trusted — ENR tel/teleo precedent).
+    accepted_total = identity_hits + name_matched_hits + identity_none
+    print(
+        "Identity leg (SUP-WORKDAY-IDENTITY-CUTOVER-1 A2): "
+        f"accepted={accepted_total} identity={identity_hits} "
+        f"name_matched={name_matched_hits} none={identity_none} "
+        f"(pool identity map size={len(identity_map)})"
+    )
+    if identity_unresolved_rows:
+        print(f"  name_matched sample (first {len(identity_unresolved_rows)}): {', '.join(identity_unresolved_rows)}")
 
     print(f"Skipped {skipped} rows (non-accepted or unchanged)")
 
